@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BrandLogo from '../components/BrandLogo'
 import LoadingState from '../components/LoadingState'
 import ResultsDashboard from '../components/ResultsDashboard'
 import UploadCard from '../components/UploadCard'
@@ -43,8 +44,8 @@ function ResumeAnalyzerPage() {
   return (
     <main className="app-shell">
       <header className="app-header">
-        <h1>Skillforge</h1>
-        <p>Resume Intelligence Dashboard</p>
+        <BrandLogo />
+        <p>Resume intelligence for role fit, skill gaps, and roadmap clarity.</p>
       </header>
 
       <UploadCard onAnalyze={handleAnalyze} isLoading={isLoading} />

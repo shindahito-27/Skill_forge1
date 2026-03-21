@@ -37,9 +37,9 @@ function UploadCard({ onAnalyze, isLoading }) {
   return (
     <div className="upload-card">
       <h2>Upload Your Resume</h2>
-      <p>Resume is required. Job description is optional.</p>
+      <p>Drop a resume and optionally a JD to generate role fit, gap analysis, and roadmap visuals.</p>
       <button className="secondary-btn" onClick={() => resumeInputRef.current?.click()}>
-        Choose File
+        Choose Resume
       </button>
       <div
         className={`dropzone ${dragActive ? 'drag-active' : ''}`}
@@ -63,7 +63,7 @@ function UploadCard({ onAnalyze, isLoading }) {
         <button className="secondary-btn" onClick={() => jdInputRef.current?.click()}>
           Upload Job Description
         </button>
-        <span className="jd-file-name">{selectedJd ? selectedJd.name : 'Using default JD if empty'}</span>
+        <span className="jd-file-name">{selectedJd ? selectedJd.name : 'Default JD will be used if left empty'}</span>
       </div>
       <input
         ref={jdInputRef}
@@ -73,7 +73,7 @@ function UploadCard({ onAnalyze, isLoading }) {
         onChange={(event) => onFilePicked(event.target.files?.[0], 'jd')}
       />
       <button className="primary-btn" onClick={handleAnalyze} disabled={!selectedResume || isLoading}>
-        {isLoading ? 'Analyzing...' : 'Analyze Resume'}
+        {isLoading ? 'Analyzing...' : 'Generate Insight Dashboard'}
       </button>
     </div>
   )

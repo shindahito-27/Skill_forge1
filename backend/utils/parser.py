@@ -120,6 +120,9 @@ def build_structured_response(
                         "label": node.get("data", {}).get("label", node.get("id", "")),
                         "status": node.get("data", {}).get("status", "unknown"),
                         "color": node.get("data", {}).get("color", "gray"),
+                        "size": _safe_round(node.get("data", {}).get("size", 0)),
+                        "difficulty": _safe_round(node.get("data", {}).get("difficulty", 0)),
+                        "priority": _safe_round(node.get("data", {}).get("priority", 0)),
                     }
                     for node in jd_graph.get("nodes", [])
                 ],

@@ -1,3 +1,60 @@
-﻿fastapi
-uvicorn[standard]
-python-multipart
+# ArtPark Project - Comprehensive Requirements
+# This file contains all dependencies for the entire project including backend, frontend, and all modules
+
+
+# BACKEND - FastAPI Framework
+
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+
+# PDF PROCESSING & DOCUMENT EXTRACTION
+
+pdfplumber>=0.10.4
+pymupdf>=1.23.8
+PyPDF>=3.17.0
+
+
+# DATA PROCESSING & NUMERICAL ANALYSIS
+
+numpy>=1.24.0
+pandas>=2.0.0
+
+
+# MACHINE LEARNING & NLP
+
+scikit-learn>=1.3.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+
+
+# GRAPH PROCESSING & VISUALIZATION
+
+networkx>=3.0
+pyvis>=0.3.2
+
+
+# UTILITIES & HELPERS
+
+python-docx>=0.8.11
+
+
+# DEVELOPMENT & TESTING (Optional)
+
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.5.0
+
+
+# NOTES:
+# - sentence-transformers: For semantic skill matching (module 2)
+# - torch: Dependency of sentence-transformers and PyTorch-based ML
+# - networkx: For graph operations in module 6
+# - pyvis: For network visualization in module 6
+# - pdfplumber & pymupdf: For multiple PDF parsing strategies
+# - FastAPI & uvicorn: Backend API server
+# - Re-export for frontend: package.json in frontend/ directory
+

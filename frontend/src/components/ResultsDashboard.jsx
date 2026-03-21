@@ -1,13 +1,47 @@
+function scoreToPercent(value) {
+  const numeric = Number(value || 0)
+  if (numeric <= 1) return Math.max(0, Math.min(100, Math.round(numeric * 100)))
+  return Math.max(0, Math.min(100, Math.round(numeric)))
+}
+
+function formatNumber(value) {
+  return Number(value || 0).toFixed(2).replace(/\.00$/, '')
+}
+
+function splitReason(reason) {
+  if (!reason) return []
+  return String(reason)
+    .split(';')
+    .map((item) => item.trim())
+    .filter(Boolean)
+}
+
 function SkillTable({ title, items }) {
   return (
     <div className="panel">
       <h3>{title}</h3>
-      <div className="chips">
+      <div className="skill-table">
         {items.length === 0 && <span className="chip muted">No data</span>}
         {items.map((item) => (
           <div className="skill-row" key={`${title}-${item.name}`}>
-            <span>{item.name}</span>
-            <span className="badge">{item.gapScore ?? item.score}</span>
+            <div className="skill-main">
+              <strong>{item.name}</strong>
+              {'gapScore' in item ? (
+                <div className="skill-details">
+                  <span className="chip subtle">{item.level}</span>
+                  <span className="chip subtle">{item.status}</span>
+                  <span className="chip subtle">{item.action}</span>
+                  <span className="chip subtle">JD {formatNumber(item.jdScore)}</span>
+                  <span className="chip subtle">Resume {formatNumber(item.resumeScore)}</span>
+                </div>
+              ) : (
+                <div className="skill-details">
+                  <span className="chip subtle">{item.taxonomy}</span>
+                  <span className="chip subtle">Confidence {formatNumber(item.confidence)}</span>
+                </div>
+              )}
+            </div>
+            <span className="badge">{formatNumber(item.gapScore ?? item.score)}</span>
           </div>
         ))}
       </div>
@@ -20,6 +54,82 @@ const STATUS_COLORS = {
   next_step: '#facc15',
   missing: '#ef4444',
   prerequisite: '#f97316',
+  context: '#94a3b8',
+}
+
+const STATUS_LABELS = {
+  known: 'Known skill',
+  next_step: 'Next step',
+  missing: 'Missing skill',
+  prerequisite: 'Prerequisite',
+  context: 'Context node',
+}
+
+function CircularMatch({ value, label, accent = 'var(--accent-2)' }) {
+  const percent = scoreToPercent(value)
+  const style = {
+    background: `conic-gradient(${accent} 0 ${percent}%, rgba(255,255,255,0.12) ${percent}% 100%)`,
+  }
+
+  return (
+    <div className="match-ring-wrap">
+      <div className="match-ring" style={style}>
+        <div className="match-ring-inner">
+          <strong>{percent}%</strong>
+          <span>{label}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function RoleCard({ role, featured = false }) {
+  const reasonLines = splitReason(role.reason).slice(0, 3)
+  return (
+    <article className={`role-card ${featured ? 'featured' : ''}`}>
+      <div className="role-card-top">
+        <div>
+          <span className="eyebrow">{featured ? 'Best fit' : 'Role fit'}</span>
+          <h3>{role.role}</h3>
+        </div>
+        <CircularMatch value={role.score} label="match" accent={featured ? 'var(--accent-3)' : 'var(--accent-2)'} />
+      </div>
+      <div className="role-chip-row">
+        {(role.missingCoreSkills || []).slice(0, 3).map((skill) => (
+          <span key={`${role.role}-${skill}`} className="chip subtle">
+            Missing: {skill}
+          </span>
+        ))}
+      </div>
+      <ul className="reason-list">
+        {reasonLines.length === 0 && <li>Role fit derived from overlap and scoring signals.</li>}
+        {reasonLines.map((line) => (
+          <li key={`${role.role}-${line}`}>{line}</li>
+        ))}
+      </ul>
+    </article>
+  )
+}
+
+function GraphLegend() {
+  return (
+    <div className="graph-legend-grid">
+      {Object.entries(STATUS_COLORS).map(([status, color]) => (
+        <div className="legend-item" key={status}>
+          <span className="legend-dot" style={{ background: color }} />
+          <span>{STATUS_LABELS[status] || status}</span>
+        </div>
+      ))}
+      <div className="legend-item wide">
+        <span className="legend-size legend-size-sm" />
+        <span>Small node = easier skill</span>
+      </div>
+      <div className="legend-item wide">
+        <span className="legend-size legend-size-lg" />
+        <span>Large node = higher difficulty</span>
+      </div>
+    </div>
+  )
 }
 
 function RoadmapGraph({ graph }) {
@@ -70,7 +180,7 @@ function RoadmapGraph({ graph }) {
             <circle
               cx={node.x}
               cy={node.y}
-              r="2.9"
+              r={Math.max(2.5, Math.min(5.4, (node.size || 18) / 6))}
               fill={STATUS_COLORS[node.status] || '#94a3b8'}
               stroke="#0f1025"
               strokeWidth="0.3"
@@ -85,27 +195,49 @@ function RoadmapGraph({ graph }) {
         <span className="chip">Nodes: {graph.meta?.node_count ?? nodes.length}</span>
         <span className="chip">Edges: {graph.meta?.edge_count ?? edges.length}</span>
       </div>
+      <GraphLegend />
     </div>
   )
 }
 
 function ResultsDashboard({ data }) {
   const { overview, skills, insights } = data
+  const topRoles = insights.recommendedRoles || []
 
   return (
     <section className="results">
-      <div className="overview-grid">
-        <div className="metric-card">
-          <h4>Best Fit Role</h4>
-          <p>{overview.bestFitRole}</p>
+      <div className="hero-metrics">
+        <div className="metric-card hero-card">
+          <div>
+            <span className="eyebrow">Best-fit role</span>
+            <h2>{overview.bestFitRole}</h2>
+            <p className="metric-support">Top recommendation from profession mapping.</p>
+          </div>
+          <CircularMatch value={overview.bestFitScore} label="match" />
         </div>
         <div className="metric-card">
-          <h4>Role Match Score</h4>
-          <p>{overview.bestFitScore}</p>
+          <h4>Next Steps</h4>
+          <div className="chips">
+            {(overview.nextSteps || []).slice(0, 4).map((step) => (
+              <span className="chip" key={step}>
+                {step}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="metric-card">
-          <h4>Target Role</h4>
-          <p>{overview.targetRole}</p>
+      </div>
+
+      <div className="panel">
+        <div className="panel-heading">
+          <div>
+            <span className="eyebrow">Top 3 results</span>
+            <h3>Best-Fit Roles</h3>
+          </div>
+        </div>
+        <div className="role-grid">
+          {topRoles.map((role, index) => (
+            <RoleCard key={role.role} role={role} featured={index === 0} />
+          ))}
         </div>
       </div>
 
@@ -132,16 +264,43 @@ function ResultsDashboard({ data }) {
         <div className="roadmap-list">
           {insights.roadmap.map((item) => (
             <article className="roadmap-item" key={`roadmap-${item.skill}`}>
-              <strong>{item.skill}</strong>
-              <span>{item.phase}</span>
-              <p>{item.reason}</p>
+              <div className="roadmap-item-top">
+                <div>
+                  <span className="eyebrow">Roadmap node</span>
+                  <strong>{item.skill}</strong>
+                </div>
+                <div className="roadmap-item-meta">
+                  <span className="chip subtle">{item.phase}</span>
+                  <span className="chip subtle">Priority score {formatNumber(item.priority)}</span>
+                </div>
+              </div>
+              <ul className="reason-list compact">
+                {splitReason(item.reason).map((line) => (
+                  <li key={`${item.skill}-${line}`}>{line}</li>
+                ))}
+              </ul>
+              {!!item.resources?.length && (
+                <div className="resource-row">
+                  {item.resources.slice(0, 3).map((resource) => (
+                    <span className="chip" key={`${item.skill}-${resource}`}>
+                      {resource}
+                    </span>
+                  ))}
+                </div>
+              )}
             </article>
           ))}
         </div>
       </div>
 
       <div className="panel">
-        <h3>JD Roadmap Graph</h3>
+        <div className="panel-heading">
+          <div>
+            <span className="eyebrow">Graph view</span>
+            <h3>JD Roadmap Graph</h3>
+          </div>
+          <p className="panel-caption">Colors show node state. Larger circles indicate harder skills.</p>
+        </div>
         <RoadmapGraph graph={insights.roadmapGraph} />
       </div>
     </section>
