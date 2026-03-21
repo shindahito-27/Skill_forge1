@@ -47,7 +47,7 @@
       "experience"
     ]
   },
-  "application programming interface": {
+  "apis": {
     "confidence": 1.0,
     "source": [
       "keyword"
@@ -197,7 +197,7 @@
       "experience"
     ]
   },
-  "devops": {
+  "devops engineer": {
     "confidence": 1.0,
     "source": [
       "keyword"
@@ -295,6 +295,22 @@
       "experience"
     ]
   },
+  "gcp": {
+    "confidence": 1.0,
+    "source": [
+      "keyword"
+    ],
+    "mentions": 2,
+    "contexts": [
+      "experience"
+    ],
+    "category": "hard_skill",
+    "taxonomy_category": "Cloud",
+    "sub_category": "DevOps",
+    "sections": [
+      "experience"
+    ]
+  },
   "git": {
     "confidence": 1.0,
     "source": [
@@ -307,22 +323,6 @@
     "category": "hard_skill",
     "taxonomy_category": "Quality",
     "sub_category": "Engineering Practices",
-    "sections": [
-      "experience"
-    ]
-  },
-  "google cloud platform": {
-    "confidence": 1.0,
-    "source": [
-      "keyword"
-    ],
-    "mentions": 2,
-    "contexts": [
-      "experience"
-    ],
-    "category": "hard_skill",
-    "taxonomy_category": "Cloud",
-    "sub_category": "DevOps",
     "sections": [
       "experience"
     ]
@@ -608,7 +608,7 @@
     ]
   },
   "__meta__": {
-    "input_path": "output\\jd\\module_3\\jd_resulting_text.txt",
+    "input_path": "output/jd/module_3/jd_resulting_text.txt",
     "semantic_device": "cpu",
     "skills_count": 37
   }

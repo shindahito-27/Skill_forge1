@@ -1,14 +1,14 @@
 {
   "acceptance testing": {
-    "weight": 4.1572,
-    "raw_weight": 4.4251,
+    "weight": 5.5079,
+    "raw_weight": 6.1951,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -23,15 +23,15 @@
     "source_multiplier": 0.8
   },
   "agile": {
-    "weight": 6.7942,
-    "raw_weight": 8.2803,
+    "weight": 7.5891,
+    "raw_weight": 9.9364,
     "phrase": "required",
     "phrase_weight": 9.0,
     "position_bonus": 1.0,
     "frequency_bonus": 2.3219,
     "mentions": 4,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 2,
+    "experience_modifier": 1.2,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -46,15 +46,15 @@
     "source_multiplier": 0.8
   },
   "airflow": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -68,16 +68,16 @@
     "skill_type_multiplier": 1.2,
     "source_multiplier": 0.8
   },
-  "application programming interface": {
-    "weight": 4.5583,
-    "raw_weight": 4.9203,
+  "apis": {
+    "weight": 5.3332,
+    "raw_weight": 5.9477,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
-    "position_bonus": 1.0,
+    "position_bonus": 0.0,
     "frequency_bonus": 2.3219,
     "mentions": 4,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -93,15 +93,15 @@
     "source_multiplier": 0.8
   },
   "artificial intelligence": {
-    "weight": 7.0993,
-    "raw_weight": 8.8704,
-    "phrase": "preferred",
-    "phrase_weight": 6.0,
-    "position_bonus": 2.0,
+    "weight": 6.5856,
+    "raw_weight": 7.9027,
+    "phrase": "unspecified",
+    "phrase_weight": 4.0,
+    "position_bonus": 0.0,
     "frequency_bonus": 3.0,
-    "mentions": 10,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "mentions": 9,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -117,15 +117,15 @@
     "source_multiplier": 0.8
   },
   "aws": {
-    "weight": 5.9945,
-    "raw_weight": 6.9229,
+    "weight": 7.4836,
+    "raw_weight": 9.6921,
     "phrase": "preferred",
     "phrase_weight": 6.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -140,15 +140,15 @@
     "source_multiplier": 0.8
   },
   "azure": {
-    "weight": 6.3617,
-    "raw_weight": 7.5172,
+    "weight": 7.8274,
+    "raw_weight": 10.5241,
     "phrase": "preferred",
     "phrase_weight": 6.0,
     "position_bonus": 1.0,
     "frequency_bonus": 2.3219,
     "mentions": 4,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -163,15 +163,15 @@
     "source_multiplier": 0.8
   },
   "azure devops": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -186,15 +186,15 @@
     "source_multiplier": 0.8
   },
   "collaboration": {
-    "weight": 3.1787,
-    "raw_weight": 3.2928,
+    "weight": 4.3089,
+    "raw_weight": 4.6099,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 2.0,
     "frequency_bonus": 1.0,
     "mentions": 1,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -209,15 +209,15 @@
     "source_multiplier": 0.8
   },
   "communication": {
-    "weight": 3.0022,
-    "raw_weight": 3.0976,
+    "weight": 4.0837,
+    "raw_weight": 4.3366,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -232,15 +232,15 @@
     "source_multiplier": 0.8
   },
   "deep learning": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -255,15 +255,15 @@
     "source_multiplier": 0.8
   },
   "design patterns": {
-    "weight": 4.1572,
-    "raw_weight": 4.4251,
+    "weight": 5.5079,
+    "raw_weight": 6.1951,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -278,16 +278,16 @@
     "skill_type_multiplier": 1.0,
     "source_multiplier": 0.8
   },
-  "devops": {
-    "weight": 5.3021,
-    "raw_weight": 5.9044,
+  "devops engineer": {
+    "weight": 6.7865,
+    "raw_weight": 8.2662,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 2.3219,
     "mentions": 4,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -302,15 +302,15 @@
     "source_multiplier": 0.8
   },
   "django": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -325,15 +325,15 @@
     "source_multiplier": 0.8
   },
   "docker": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -349,15 +349,15 @@
     "source_multiplier": 0.8
   },
   "documentation": {
-    "weight": 6.2866,
-    "raw_weight": 7.392,
+    "weight": 7.7586,
+    "raw_weight": 10.3488,
     "phrase": "required",
     "phrase_weight": 9.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.0,
     "mentions": 1,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -372,15 +372,15 @@
     "source_multiplier": 0.8
   },
   "fastapi": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -395,15 +395,15 @@
     "source_multiplier": 0.8
   },
   "flask": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -417,39 +417,16 @@
     "skill_type_multiplier": 1.2,
     "source_multiplier": 0.8
   },
-  "git": {
-    "weight": 4.1572,
-    "raw_weight": 4.4251,
-    "phrase": "unspecified",
-    "phrase_weight": 4.0,
-    "position_bonus": 1.0,
-    "frequency_bonus": 1.585,
-    "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
-    "confidence": 0.6,
-    "source": [
-      "keyword"
-    ],
-    "contexts": [
-      "experience"
-    ],
-    "category": "hard_skill",
-    "taxonomy_category": "Quality",
-    "sub_category": "Engineering Practices",
-    "skill_type_multiplier": 1.0,
-    "source_multiplier": 0.8
-  },
-  "google cloud platform": {
-    "weight": 5.9945,
-    "raw_weight": 6.9229,
+  "gcp": {
+    "weight": 7.4836,
+    "raw_weight": 9.6921,
     "phrase": "preferred",
     "phrase_weight": 6.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -463,16 +440,39 @@
     "skill_type_multiplier": 1.2,
     "source_multiplier": 0.8
   },
-  "guardrails": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+  "git": {
+    "weight": 5.5079,
+    "raw_weight": 6.1951,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
+    "confidence": 0.6,
+    "source": [
+      "keyword"
+    ],
+    "contexts": [
+      "experience"
+    ],
+    "category": "hard_skill",
+    "taxonomy_category": "Quality",
+    "sub_category": "Engineering Practices",
+    "skill_type_multiplier": 1.0,
+    "source_multiplier": 0.8
+  },
+  "guardrails": {
+    "weight": 6.312,
+    "raw_weight": 7.4342,
+    "phrase": "unspecified",
+    "phrase_weight": 4.0,
+    "position_bonus": 1.0,
+    "frequency_bonus": 1.585,
+    "mentions": 2,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -487,15 +487,15 @@
     "source_multiplier": 0.8
   },
   "infrastructure as code": {
-    "weight": 4.222,
-    "raw_weight": 4.5037,
+    "weight": 5.5841,
+    "raw_weight": 6.3052,
     "phrase": "familiarity with",
     "phrase_weight": 3.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -510,15 +510,15 @@
     "source_multiplier": 0.8
   },
   "interpersonal skills": {
-    "weight": 3.0022,
-    "raw_weight": 3.0976,
+    "weight": 4.0837,
+    "raw_weight": 4.3366,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -533,15 +533,15 @@
     "source_multiplier": 0.8
   },
   "jira": {
-    "weight": 4.1572,
-    "raw_weight": 4.4251,
+    "weight": 5.5079,
+    "raw_weight": 6.1951,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -556,15 +556,15 @@
     "source_multiplier": 0.8
   },
   "kubernetes": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -580,15 +580,15 @@
     "source_multiplier": 0.8
   },
   "lora": {
-    "weight": 4.1572,
-    "raw_weight": 4.4251,
+    "weight": 5.5079,
+    "raw_weight": 6.1951,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -603,15 +603,15 @@
     "source_multiplier": 0.8
   },
   "machine learning": {
-    "weight": 6.2046,
-    "raw_weight": 7.2576,
+    "weight": 7.6826,
+    "raw_weight": 10.1606,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 2.0,
     "frequency_bonus": 3.0,
     "mentions": 10,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -627,15 +627,15 @@
     "source_multiplier": 0.8
   },
   "mlops": {
-    "weight": 4.222,
-    "raw_weight": 4.5037,
+    "weight": 5.5841,
+    "raw_weight": 6.3052,
     "phrase": "familiarity with",
     "phrase_weight": 3.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -650,15 +650,15 @@
     "source_multiplier": 0.8
   },
   "optimization": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -673,15 +673,15 @@
     "source_multiplier": 0.8
   },
   "planning": {
-    "weight": 3.1787,
-    "raw_weight": 3.2928,
+    "weight": 4.3089,
+    "raw_weight": 4.6099,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 2.0,
     "frequency_bonus": 1.0,
     "mentions": 1,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -696,15 +696,15 @@
     "source_multiplier": 0.8
   },
   "python": {
-    "weight": 7.8115,
-    "raw_weight": 10.4832,
+    "weight": 8.9913,
+    "raw_weight": 14.6765,
     "phrase": "required",
     "phrase_weight": 9.0,
     "position_bonus": 1.0,
     "frequency_bonus": 3.0,
     "mentions": 8,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -721,15 +721,15 @@
     "source_multiplier": 0.8
   },
   "pytorch": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -744,15 +744,15 @@
     "source_multiplier": 0.8
   },
   "r": {
-    "weight": 3.8268,
-    "raw_weight": 4.032,
+    "weight": 5.1129,
+    "raw_weight": 5.6448,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 0.0,
     "frequency_bonus": 1.0,
     "mentions": 1,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -767,15 +767,15 @@
     "source_multiplier": 0.8
   },
   "reporting": {
-    "weight": 5.1129,
-    "raw_weight": 5.6448,
+    "weight": 6.5856,
+    "raw_weight": 7.9027,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 2.0,
     "frequency_bonus": 1.0,
     "mentions": 1,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -790,15 +790,15 @@
     "source_multiplier": 0.8
   },
   "scikit-learn": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -813,15 +813,15 @@
     "source_multiplier": 0.8
   },
   "teams": {
-    "weight": 5.8629,
-    "raw_weight": 6.72,
+    "weight": 6.676,
+    "raw_weight": 8.064,
     "phrase": "preferred",
     "phrase_weight": 6.0,
     "position_bonus": 2.0,
     "frequency_bonus": 2.0,
     "mentions": 3,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 2,
+    "experience_modifier": 1.2,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -836,15 +836,15 @@
     "source_multiplier": 0.8
   },
   "tensorflow": {
-    "weight": 4.8615,
-    "raw_weight": 5.3101,
+    "weight": 6.312,
+    "raw_weight": 7.4342,
     "phrase": "unspecified",
     "phrase_weight": 4.0,
     "position_bonus": 1.0,
     "frequency_bonus": 1.585,
     "mentions": 2,
-    "experience_years": null,
-    "experience_modifier": 1.0,
+    "experience_years": 4,
+    "experience_modifier": 1.4,
     "confidence": 0.6,
     "source": [
       "keyword"
@@ -859,7 +859,7 @@
     "source_multiplier": 0.8
   },
   "__meta__": {
-    "input_text": "output\\jd\\module_3\\jd_resulting_text.txt",
+    "input_text": "output/jd/module_3/jd_resulting_text.txt",
     "skills_count": 37,
     "formula": "((phrase_weight + position_bonus + frequency_bonus) * experience_modifier * skill_type_multiplier) * source_multiplier * confidence_factor",
     "confidence_fusion": "0.6*keyword_confidence + 0.4*semantic_confidence",
@@ -874,6 +874,12 @@
       "good to have": 5.0,
       "exposure to": 4.0,
       "familiarity with": 3.0
+    },
+    "jd_level_profile": {
+      "global_experience_years": 4,
+      "jd_level": "senior",
+      "jd_level_rank": 2,
+      "reason": "Detected about 4 years of experience in JD text."
     }
   }
 }
