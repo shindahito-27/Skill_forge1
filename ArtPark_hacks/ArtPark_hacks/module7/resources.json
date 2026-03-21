@@ -1,0 +1,518 @@
+{
+  "agile": [
+    {
+      "title": "Atlassian Agile Coach",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Scrum Guide",
+      "type": "guide",
+      "level": "beginner"
+    }
+  ],
+  "airflow": [
+    {
+      "title": "Apache Airflow Documentation",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Astronomer Learn Airflow",
+      "type": "tutorial",
+      "level": "beginner"
+    }
+  ],
+  "analytics": [
+    {
+      "title": "Google Data Analytics Certificate",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Kaggle Learn",
+      "type": "practice",
+      "level": "beginner"
+    }
+  ],
+  "apis": [
+    {
+      "title": "Postman API Fundamentals Student Expert",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "MDN Web Docs: APIs",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "attention to detail": [
+    {
+      "title": "MindTools Attention to Detail",
+      "type": "article",
+      "level": "beginner"
+    },
+    {
+      "title": "Grammarly Writing Handbook",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "azure": [
+    {
+      "title": "Microsoft Learn Azure Fundamentals",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Azure Documentation",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "artificial intelligence": [
+    {
+      "title": "Elements of AI",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Google AI Learning Path",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "azure devops": [
+    {
+      "title": "Microsoft Learn Azure DevOps",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Azure DevOps Documentation",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "business intelligence": [
+    {
+      "title": "Microsoft Learn Business Intelligence",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Coursera Business Intelligence Concepts",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "communication protocols": [
+    {
+      "title": "Computer Networking: A Top-Down Approach Notes",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Cisco Networking Basics",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "data analysis": [
+    {
+      "title": "Google Data Analytics Certificate",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Kaggle Intro to Data Analysis",
+      "type": "practice",
+      "level": "beginner"
+    }
+  ],
+  "data cleaning": [
+    {
+      "title": "Kaggle Data Cleaning",
+      "type": "practice",
+      "level": "beginner"
+    },
+    {
+      "title": "Pandas User Guide",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "data modeling": [
+    {
+      "title": "Vertabelo Data Modeling Guide",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Microsoft Learn Data Modeling",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "debugging": [
+    {
+      "title": "The Debugging Book",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "VS Code Debugging Guide",
+      "type": "tutorial",
+      "level": "beginner"
+    }
+  ],
+  "devops engineer": [
+    {
+      "title": "roadmap.sh DevOps",
+      "type": "roadmap",
+      "level": "beginner"
+    },
+    {
+      "title": "freeCodeCamp DevOps for Beginners",
+      "type": "video",
+      "level": "beginner"
+    }
+  ],
+  "django": [
+    {
+      "title": "Django Documentation",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Django Girls Tutorial",
+      "type": "tutorial",
+      "level": "beginner"
+    }
+  ],
+  "file systems": [
+    {
+      "title": "OSTEP: File System Implementation",
+      "type": "textbook",
+      "level": "intermediate"
+    },
+    {
+      "title": "MIT Operating Systems Notes",
+      "type": "reference",
+      "level": "intermediate"
+    }
+  ],
+  "documentation": [
+    {
+      "title": "Write the Docs Guide",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Google Technical Writing Courses",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "fastapi": [
+    {
+      "title": "FastAPI Tutorial",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "FastAPI Beyond CRUD",
+      "type": "tutorial",
+      "level": "intermediate"
+    }
+  ],
+  "gcp": [
+    {
+      "title": "Google Cloud Skills Boost",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Google Cloud Documentation",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "java": [
+    {
+      "title": "Dev.java Tutorials",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Java Programming MOOC",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "power bi": [
+    {
+      "title": "Microsoft Learn Power BI",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Power BI Guided Learning",
+      "type": "tutorial",
+      "level": "beginner"
+    }
+  ],
+  "python": [
+    {
+      "title": "Python Official Tutorial",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Automate the Boring Stuff with Python",
+      "type": "course",
+      "level": "beginner"
+    }
+  ],
+  "pandas": [
+    {
+      "title": "Kaggle Pandas",
+      "type": "practice",
+      "level": "beginner"
+    },
+    {
+      "title": "Pandas User Guide",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "reporting": [
+    {
+      "title": "Microsoft Learn Create Reports",
+      "type": "tutorial",
+      "level": "beginner"
+    },
+    {
+      "title": "Looker Studio Report Tutorials",
+      "type": "tutorial",
+      "level": "beginner"
+    }
+  ],
+  "software architecture": [
+    {
+      "title": "Fundamentals of Software Architecture",
+      "type": "book",
+      "level": "intermediate"
+    },
+    {
+      "title": "System Design Primer",
+      "type": "reference",
+      "level": "intermediate"
+    }
+  ],
+  "statistics": [
+    {
+      "title": "Khan Academy Statistics and Probability",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "StatQuest Statistics Fundamentals",
+      "type": "video",
+      "level": "beginner"
+    }
+  ],
+  "tableau": [
+    {
+      "title": "Tableau Training Videos",
+      "type": "video",
+      "level": "beginner"
+    },
+    {
+      "title": "Tableau Documentation",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "aws": [
+    {
+      "title": "AWS Cloud Practitioner Essentials",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "AWS Skill Builder",
+      "type": "practice",
+      "level": "beginner"
+    }
+  ],
+  "docker": [
+    {
+      "title": "Docker Curriculum",
+      "type": "tutorial",
+      "level": "beginner"
+    },
+    {
+      "title": "Docker Documentation",
+      "type": "reference",
+      "level": "beginner"
+    }
+  ],
+  "machine learning": [
+    {
+      "title": "Google Machine Learning Crash Course",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Hands-On Machine Learning",
+      "type": "book",
+      "level": "intermediate"
+    }
+  ],
+  "deep learning": [
+    {
+      "title": "DeepLearning.AI Neural Networks and Deep Learning",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "Dive into Deep Learning",
+      "type": "book",
+      "level": "intermediate"
+    }
+  ],
+  "evaluation": [
+    {
+      "title": "Google ML Crash Course: Classification and Metrics",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "DeepLearning.AI Evaluating and Debugging Generative AI",
+      "type": "course",
+      "level": "intermediate"
+    }
+  ],
+  "experiment design": [
+    {
+      "title": "Khan Academy Experimental Design",
+      "type": "lesson",
+      "level": "beginner"
+    },
+    {
+      "title": "CXL A/B Testing and Experimentation Guide",
+      "type": "guide",
+      "level": "intermediate"
+    }
+  ],
+  "hypothesis testing": [
+    {
+      "title": "StatQuest Hypothesis Testing",
+      "type": "video",
+      "level": "beginner"
+    },
+    {
+      "title": "Khan Academy Significance Tests",
+      "type": "lesson",
+      "level": "beginner"
+    }
+  ],
+  "information retrieval": [
+    {
+      "title": "Introduction to Information Retrieval",
+      "type": "textbook",
+      "level": "intermediate"
+    },
+    {
+      "title": "PyTerrier Tutorials",
+      "type": "tutorial",
+      "level": "intermediate"
+    }
+  ],
+  "mlops": [
+    {
+      "title": "Made With ML: MLOps",
+      "type": "course",
+      "level": "intermediate"
+    },
+    {
+      "title": "Full Stack Deep Learning MLOps",
+      "type": "course",
+      "level": "intermediate"
+    }
+  ],
+  "probability": [
+    {
+      "title": "Khan Academy Probability",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "StatQuest Probability Explained",
+      "type": "video",
+      "level": "beginner"
+    }
+  ],
+  "scikit-learn": [
+    {
+      "title": "scikit-learn User Guide",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Kaggle Intro to Machine Learning",
+      "type": "practice",
+      "level": "beginner"
+    }
+  ],
+  "seaborn": [
+    {
+      "title": "Seaborn Tutorial",
+      "type": "reference",
+      "level": "beginner"
+    },
+    {
+      "title": "Seaborn Gallery",
+      "type": "examples",
+      "level": "beginner"
+    }
+  ],
+  "data storytelling": [
+    {
+      "title": "Storytelling with Data",
+      "type": "book",
+      "level": "beginner"
+    },
+    {
+      "title": "Google Data Visualization Storytelling Guide",
+      "type": "guide",
+      "level": "beginner"
+    }
+  ],
+  "tokenization": [
+    {
+      "title": "Hugging Face Course: Tokenizers",
+      "type": "course",
+      "level": "beginner"
+    },
+    {
+      "title": "CS224N Tokenization Notes",
+      "type": "reference",
+      "level": "intermediate"
+    }
+  ],
+  "transformers": [
+    {
+      "title": "Hugging Face Course",
+      "type": "course",
+      "level": "intermediate"
+    },
+    {
+      "title": "The Illustrated Transformer",
+      "type": "article",
+      "level": "intermediate"
+    }
+  ]
+}

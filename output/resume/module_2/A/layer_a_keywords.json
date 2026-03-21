@@ -39,16 +39,16 @@
     "mentions": 4,
     "contexts": [
       "skills",
-      "general",
-      "project"
+      "project",
+      "general"
     ],
     "category": "hard_skill",
     "taxonomy_category": "Programming",
     "sub_category": "Languages",
     "sections": [
       "skills",
-      "general",
-      "project"
+      "project",
+      "general"
     ]
   },
   "file systems": {
@@ -125,16 +125,16 @@
     "mentions": 4,
     "contexts": [
       "skills",
-      "general",
-      "project"
+      "project",
+      "general"
     ],
     "category": "hard_skill",
     "taxonomy_category": "Backend",
     "sub_category": "Services",
     "sections": [
       "skills",
-      "general",
-      "project"
+      "project",
+      "general"
     ]
   },
   "python": {
@@ -162,15 +162,15 @@
     ],
     "mentions": 2,
     "contexts": [
-      "general",
-      "education"
+      "education",
+      "general"
     ],
     "category": "hard_skill",
     "taxonomy_category": "Business",
     "sub_category": "Enterprise Tools",
     "sections": [
-      "general",
-      "education"
+      "education",
+      "general"
     ]
   },
   "c": {

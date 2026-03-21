@@ -292,7 +292,7 @@
     "raw": "CGPA: 8.4"
   },
   "__meta__": {
-    "input_path": "output/resume/module_1/Arnav_Sachdeva_SWE_Intern_Resume.txt",
+    "input_path": "output\\resume\\module_1\\Arnav_Sachdeva_SWE_Intern_Resume.txt",
     "semantic_device": "cpu",
     "skills_count": 18
   }

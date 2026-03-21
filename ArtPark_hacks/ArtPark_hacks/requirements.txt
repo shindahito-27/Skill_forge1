@@ -1,0 +1,10 @@
+# Core parsing
+PyMuPDF>=1.24.0
+pdfplumber>=0.11.0
+
+# Numeric operations
+numpy>=1.24.0
+
+# Semantic skill extraction
+sentence-transformers>=2.7.0
+torch>=2.2.0

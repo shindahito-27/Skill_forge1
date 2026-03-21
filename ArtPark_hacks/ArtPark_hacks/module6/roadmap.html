@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 750px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "green", "id": "git", "label": "git", "shape": "dot", "size": 24, "title": "Pro Git Book\u003cbr\u003eGit SCM Documentation"}, {"color": "green", "id": "java", "label": "java", "shape": "dot", "size": 24, "title": "Dev.java Tutorials\u003cbr\u003eJava Programming MOOC"}, {"color": "yellow", "id": "system design", "label": "system design", "shape": "dot", "size": 30, "title": "System Design Primer\u003cbr\u003eAWS Architecture Center"}, {"color": "yellow", "id": "software architecture", "label": "software architecture", "shape": "dot", "size": 30, "title": "Fundamentals of Software Architecture\u003cbr\u003eSystem Design Primer"}, {"color": "green", "id": "debugging", "label": "debugging", "shape": "dot", "size": 24, "title": "The Debugging Book\u003cbr\u003eVS Code Debugging Guide"}, {"color": "yellow", "id": "apis", "label": "apis", "shape": "dot", "size": 30, "title": "Postman API Fundamentals Student Expert\u003cbr\u003eMDN Web Docs: APIs"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "java", "to": "apis", "value": 2.0}, {"arrows": "to", "from": "java", "to": "software architecture", "value": 2.0}, {"arrows": "to", "from": "software architecture", "to": "system design", "value": 2.0}, {"arrows": "to", "from": "debugging", "to": "system design", "value": 1.0}, {"arrows": "to", "from": "apis", "to": "software architecture", "value": 2.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.01,
+            "damping": 0.4,
+            "gravitationalConstant": -50,
+            "springConstant": 0.08,
+            "springLength": 100
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    
+<style>
+.roadmap-panel {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 9999;
+  width: 340px;
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+  padding: 18px 18px 14px;
+  border-radius: 18px;
+  background: rgba(255, 252, 244, 0.94);
+  box-shadow: 0 18px 40px rgba(33, 37, 41, 0.18);
+  border: 1px solid rgba(181, 148, 84, 0.22);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.roadmap-panel h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #1f2a37;
+}
+.roadmap-panel p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #425466;
+}
+.legend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #243447;
+}
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  flex: 0 0 12px;
+}
+.roadmap-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+.roadmap-chip {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #f4ead7;
+}
+.role-lines {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+.role-line {
+  font-size: 13px;
+  color: #243447;
+}
+.role-line strong {
+  color: #8b5e34;
+}
+.phase-block {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.28);
+}
+.phase-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 10px;
+}
+.phase-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8b5e34;
+}
+.phase-skills {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #243447;
+}
+</style>
+<div class="roadmap-panel">
+  <h1>profession_mapping</h1>
+  <p><strong>Roadmap</strong></p>
+  <p>Roadmap view generated from graph dependencies and gap priorities.</p>
+  <p></p>
+  <div class="role-lines">
+    <div class="role-line"><strong>Candidate Best Fit:</strong> Unknown</div>
+    <div class="role-line"><strong>Target JD Role:</strong> Unknown</div>
+  </div>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="legend-dot" style="background:#e11d48"></span>Missing skill</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span>Next step</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Known skill</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#f97316"></span>Prerequisite</div>
+  </div>
+  <div class="roadmap-meta">
+    <span class="roadmap-chip">Nodes: 6</span>
+    <span class="roadmap-chip">Edges: 5</span>
+    <span class="roadmap-chip">Next: No immediate next step</span>
+  </div>
+  
+  <div class="phase-block">
+    <div class='phase-row'><span class='phase-skills'>No phase details available.</span></div>
+  </div>
+</div>
+</body>
+</html>

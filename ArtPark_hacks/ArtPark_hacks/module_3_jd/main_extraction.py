@@ -1,0 +1,521 @@
+from __future__ import annotations
+
+import argparse
+import json
+import re
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+import pdfplumber
+import pymupdf
+
+
+FORM_FEED = chr(12)
+URL_REGEX = re.compile(r"(?i)\b(?:https?://|www\.)[^\s<>\"\]\[(){}]+")
+TARGET_SECTIONS = (
+    "job_summary",
+    "responsibilities",
+    "required_skills",
+    "preferred_skills",
+    "qualifications",
+    "education",
+    "experience",
+    "benefits",
+    "location",
+    "employment_type",
+)
+
+SECTION_PATTERNS = {
+    "job_summary": (
+        "job summary",
+        "summary",
+        "about the role",
+        "role overview",
+        "about this role",
+    ),
+    "responsibilities": (
+        "responsibilities",
+        "key responsibilities",
+        "what you will do",
+        "your responsibilities",
+        "duties",
+    ),
+    "required_skills": (
+        "required skills",
+        "must have",
+        "requirements",
+        "minimum qualifications",
+        "required qualifications",
+    ),
+    "preferred_skills": (
+        "preferred skills",
+        "good to have",
+        "preferred qualifications",
+        "nice to have",
+    ),
+    "qualifications": (
+        "qualifications",
+        "eligibility",
+        "who you are",
+    ),
+    "experience": (
+        "experience",
+        "work experience",
+        "years of experience",
+    ),
+    "education": (
+        "education",
+        "academic background",
+        "degree",
+        "degrees",
+    ),
+    "benefits": (
+        "benefits",
+        "what we offer",
+        "perks",
+        "compensation and benefits",
+    ),
+    "location": (
+        "location",
+        "job location",
+        "work location",
+    ),
+    "employment_type": (
+        "employment type",
+        "job type",
+        "contract type",
+        "full time",
+        "part time",
+    ),
+}
+
+SECTION_REGEX = re.compile(
+    r"^\s*[\W_]*(job\s+summary|summary|responsibilities|requirements?|qualifications?|preferred\s+skills?|required\s+skills?|experience|education|benefits|location|employment\s+type|job\s+type)\b[\W_]*$",
+    flags=re.IGNORECASE,
+)
+
+
+def _normalize_heading(line: str) -> str:
+    normalized = re.sub(r"[\s:|._-]+", " ", line.strip().lower())
+    normalized = re.sub(r"\s+", " ", normalized)
+    return normalized
+
+
+def _match_heading(line: str) -> Optional[str]:
+    if not line or len(line.split()) > 4:
+        return None
+
+    normalized = _normalize_heading(line)
+    for section, aliases in SECTION_PATTERNS.items():
+        if normalized in aliases:
+            return section
+
+    if SECTION_REGEX.match(line.strip()):
+        key = normalized
+        if "responsibil" in key or "duties" in key:
+            return "responsibilities"
+        if "required" in key or "minimum" in key or key == "requirements":
+            return "required_skills"
+        if "preferred" in key or "nice to have" in key or "good to have" in key:
+            return "preferred_skills"
+        if "qualification" in key:
+            return "qualifications"
+        if "benefit" in key or "offer" in key or "perk" in key:
+            return "benefits"
+        if "location" in key:
+            return "location"
+        if "employment type" in key or "job type" in key:
+            return "employment_type"
+        if key == "education":
+            return "education"
+        if "experience" in key:
+            return "experience"
+        if "summary" in key or "about the role" in key:
+            return "job_summary"
+    return None
+
+
+def _clean_line(line: str) -> str:
+    line = line.strip()
+    line = re.sub(r"^[\-\*\u2022\u25cf\u00b7\u25e6]+\s*", "", line)
+    line = re.sub(r"\s+", " ", line)
+    return line.strip()
+
+
+def _extract_text_pymupdf(file_path: str) -> str:
+    pages: List[str] = []
+    with pymupdf.open(file_path) as doc:
+        for page in doc:
+            text = page.get_text("text", sort=True).strip()
+            if not text:
+                blocks = page.get_text("blocks")
+                sorted_blocks = sorted(blocks, key=lambda b: (round(b[1], 1), round(b[0], 1)))
+                text = "\n".join(
+                    block[4].strip() for block in sorted_blocks if len(block) > 4 and str(block[4]).strip()
+                )
+            pages.append(text)
+    return FORM_FEED.join(pages).strip()
+
+
+def _extract_text_pdfplumber(file_path: str) -> str:
+    pages: List[str] = []
+    with pdfplumber.open(file_path) as pdf:
+        for page in pdf.pages:
+            text = page.extract_text(layout=True) or page.extract_text() or ""
+            pages.append(text.strip())
+    return FORM_FEED.join(pages).strip()
+
+
+def _quality_score(text: str) -> float:
+    if not text:
+        return 0.0
+
+    heading_hits = len(
+        re.findall(
+            r"(?im)^\s*(skills?|projects?|experience|education|achievements?|leadership(?:\s+(?:roles?|experience))?|certifications?)\s*:?\s*$",
+            text,
+        )
+    )
+    bullet_hits = len(re.findall(r"(?m)^\s*[\-\*\u2022\u25cf\u00b7]\s+", text))
+    line_hits = text.count("\n")
+    length_score = min(len(text), 30000) / 1200.0
+    return (heading_hits * 3.0) + (bullet_hits * 0.4) + (line_hits * 0.03) + length_score
+
+
+def _normalize_url(url: str) -> str:
+    cleaned = url.strip().rstrip(".,;:)")
+    if cleaned.lower().startswith("www."):
+        cleaned = f"https://{cleaned}"
+    return cleaned
+
+
+def _extract_urls_from_text(text: str) -> List[str]:
+    urls: List[str] = []
+    seen = set()
+    for match in URL_REGEX.finditer(text or ""):
+        normalized = _normalize_url(match.group(0))
+        key = normalized.lower()
+        if normalized and key not in seen:
+            seen.add(key)
+            urls.append(normalized)
+    return urls
+
+
+def _extract_pdf_embedded_links(file_path: str) -> List[str]:
+    links: List[str] = []
+    seen = set()
+    with pymupdf.open(file_path) as doc:
+        for page in doc:
+            for link in page.get_links():
+                uri = str(link.get("uri") or "").strip()
+                if not uri:
+                    continue
+                normalized = _normalize_url(uri)
+                key = normalized.lower()
+                if normalized and key not in seen:
+                    seen.add(key)
+                    links.append(normalized)
+    return links
+
+
+def extract_hyperlinks(file_path: str, raw_text: str) -> List[str]:
+    urls = _extract_urls_from_text(raw_text)
+    seen = {url.lower() for url in urls}
+    if Path(file_path).suffix.lower() == ".pdf":
+        try:
+            for url in _extract_pdf_embedded_links(file_path):
+                key = url.lower()
+                if key not in seen:
+                    seen.add(key)
+                    urls.append(url)
+        except Exception:
+            pass
+    return urls
+
+
+def _clean_table_cell(value: Any) -> str:
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value).strip())
+
+
+def _has_any_content(row: List[str]) -> bool:
+    return any(cell for cell in row)
+
+
+def extract_tables(file_path: str) -> List[Dict[str, Any]]:
+    """Extract tables as structured JSON using pdfplumber.extract_tables()."""
+    if Path(file_path).suffix.lower() != ".pdf":
+        return []
+
+    extracted: List[Dict[str, Any]] = []
+
+    try:
+        with pdfplumber.open(file_path) as pdf:
+            for page_index, page in enumerate(pdf.pages, start=1):
+                page_tables = page.extract_tables() or []
+                for table_index, table in enumerate(page_tables, start=1):
+                    cleaned_rows: List[List[str]] = []
+                    for row in table or []:
+                        clean_row = [_clean_table_cell(cell) for cell in (row or [])]
+                        if _has_any_content(clean_row):
+                            cleaned_rows.append(clean_row)
+
+                    if not cleaned_rows:
+                        continue
+
+                    headers = cleaned_rows[0]
+                    body_rows = cleaned_rows[1:]
+                    has_headers = len(headers) > 0 and _has_any_content(headers)
+
+                    table_json: Dict[str, Any] = {
+                        "page": page_index,
+                        "table_index": table_index,
+                        "headers": headers if has_headers else [],
+                        "rows": [],
+                    }
+
+                    if has_headers and body_rows:
+                        rows_as_objects: List[Dict[str, str]] = []
+                        for body in body_rows:
+                            width = max(len(headers), len(body))
+                            padded_headers = headers + [f"column_{i}" for i in range(len(headers) + 1, width + 1)]
+                            padded_body = body + [""] * (width - len(body))
+
+                            row_obj: Dict[str, str] = {}
+                            for idx, value in enumerate(padded_body):
+                                key = padded_headers[idx].strip() or f"column_{idx + 1}"
+                                row_obj[key] = value
+                            rows_as_objects.append(row_obj)
+                        table_json["rows"] = rows_as_objects
+                    else:
+                        table_json["rows"] = cleaned_rows
+
+                    extracted.append(table_json)
+    except Exception:
+        return []
+
+    return extracted
+
+
+def extract_raw_text(file_path: str) -> str:
+    pymupdf_text = ""
+    pdfplumber_text = ""
+
+    try:
+        pymupdf_text = _extract_text_pymupdf(file_path)
+    except Exception:
+        pymupdf_text = ""
+
+    is_pdf = Path(file_path).suffix.lower() == ".pdf"
+    if is_pdf:
+        try:
+            pdfplumber_text = _extract_text_pdfplumber(file_path)
+        except Exception:
+            pdfplumber_text = ""
+
+    if pymupdf_text and not pdfplumber_text:
+        return pymupdf_text
+    if pdfplumber_text and not pymupdf_text:
+        return pdfplumber_text
+    if pymupdf_text and pdfplumber_text:
+        pymupdf_score = _quality_score(pymupdf_text)
+        pdfplumber_score = _quality_score(pdfplumber_text)
+        return pdfplumber_text if pdfplumber_score > (pymupdf_score * 1.05) else pymupdf_text
+
+    raise RuntimeError("Unable to extract text with both PyMuPDF and pdfplumber.")
+
+
+def _parse_skills(lines: List[str]) -> List[str]:
+    merged = "\n".join(lines)
+    raw_items = re.split(r"[\n,;|/]+", merged)
+    skills: List[str] = []
+    seen = set()
+    for item in raw_items:
+        cleaned = _clean_line(item)
+        if not cleaned:
+            continue
+        key = cleaned.lower()
+        if key not in seen:
+            seen.add(key)
+            skills.append(cleaned)
+    return skills
+
+
+def _parse_generic_entries(lines: List[str]) -> List[str]:
+    entries: List[str] = []
+    current: List[str] = []
+    for raw_line in lines:
+        stripped = raw_line.strip()
+        if not stripped:
+            if current:
+                entries.append(" ".join(current).strip())
+                current = []
+            continue
+
+        cleaned = _clean_line(raw_line)
+        is_bullet = bool(re.match(r"^\s*[\-\*\u2022\u25cf\u00b7]", raw_line))
+        if is_bullet and current:
+            entries.append(" ".join(current).strip())
+            current = [cleaned]
+        else:
+            current.append(cleaned)
+
+    if current:
+        entries.append(" ".join(current).strip())
+
+    deduped: List[str] = []
+    seen = set()
+    for entry in entries:
+        key = entry.lower()
+        if entry and key not in seen:
+            seen.add(key)
+            deduped.append(entry)
+    return deduped
+
+
+def split_sections(raw_text: str) -> Dict[str, List[str]]:
+    section_lines: Dict[str, List[str]] = {name: [] for name in TARGET_SECTIONS}
+    current_section: Optional[str] = None
+
+    for line in raw_text.replace(FORM_FEED, "\n").splitlines():
+        heading = _match_heading(line)
+        if heading:
+            current_section = heading
+            continue
+        if current_section in section_lines:
+            section_lines[current_section].append(line.rstrip())
+
+    return {
+        "job_summary": _parse_generic_entries(section_lines["job_summary"]),
+        "responsibilities": _parse_generic_entries(section_lines["responsibilities"]),
+        "required_skills": _parse_skills(section_lines["required_skills"]),
+        "preferred_skills": _parse_skills(section_lines["preferred_skills"]),
+        "qualifications": _parse_generic_entries(section_lines["qualifications"]),
+        "education": _parse_generic_entries(section_lines["education"]),
+        "experience": _parse_generic_entries(section_lines["experience"]),
+        "benefits": _parse_generic_entries(section_lines["benefits"]),
+        "location": _parse_generic_entries(section_lines["location"]),
+        "employment_type": _parse_generic_entries(section_lines["employment_type"]),
+    }
+
+
+def _render_table_lines(tables: List[Dict[str, Any]]) -> List[str]:
+    lines: List[str] = []
+    for table in tables:
+        page = table.get("page")
+        idx = table.get("table_index")
+        headers = table.get("headers") or []
+        rows = table.get("rows") or []
+
+        if not rows:
+            continue
+
+        lines.append(f"Table {idx} (Page {page}):")
+        if headers:
+            lines.append("Headers: " + " | ".join(str(h) for h in headers if str(h).strip()))
+
+        for row in rows:
+            if isinstance(row, dict):
+                parts = [f"{k}: {v}" for k, v in row.items() if str(v).strip()]
+                if parts:
+                    lines.append("- " + "; ".join(parts))
+            elif isinstance(row, list):
+                vals = [str(v) for v in row if str(v).strip()]
+                if vals:
+                    lines.append("- " + " | ".join(vals))
+
+    return lines
+
+
+def build_resulting_text(raw_text: str, sections: Dict[str, List[str]], tables: List[Dict[str, Any]]) -> str:
+    chunks: List[str] = [raw_text.strip()]
+
+    jd_structured: List[str] = []
+    section_order = [
+        "job_summary",
+        "responsibilities",
+        "required_skills",
+        "preferred_skills",
+        "qualifications",
+        "experience",
+        "education",
+        "benefits",
+        "location",
+        "employment_type",
+    ]
+
+    for key in section_order:
+        values = sections.get(key) or []
+        if not values:
+            continue
+        jd_structured.append(key.replace("_", " ").title() + ":")
+        for item in values:
+            jd_structured.append(f"- {item}")
+
+    table_lines = _render_table_lines(tables)
+    if table_lines:
+        jd_structured.append("Tables:")
+        jd_structured.extend(table_lines)
+
+    if jd_structured:
+        chunks.append("\n".join(jd_structured))
+
+    return "\n\n".join(chunk for chunk in chunks if chunk).strip() + "\n"
+
+
+def parse_job_description(file_path: str) -> Dict[str, object]:
+    raw_text = extract_raw_text(file_path)
+    sections = split_sections(raw_text)
+    hyperlinks = extract_hyperlinks(file_path, raw_text)
+    tables = extract_tables(file_path)
+    resulting_text = build_resulting_text(raw_text, sections, tables)
+    return {
+        "raw_text": raw_text,
+        "resulting_text": resulting_text,
+        "sections": sections,
+        "hyperlinks": hyperlinks,
+        "tables": tables,
+    }
+
+
+# Backward compatibility for any older callers.
+def parse_resume(file_path: str) -> Dict[str, object]:
+    return parse_job_description(file_path)
+
+
+def write_text_output(file_path: str, text: str, output_path: Optional[str] = None) -> Path:
+    target = Path(output_path) if output_path else Path(str(file_path) + ".txt")
+    target.write_bytes(text.encode("utf-8"))
+    return target
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="JD parser using PyMuPDF + pdfplumber fallback.")
+    parser.add_argument("file", help="Path to JD document.")
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Print parsed JD JSON to stdout.",
+    )
+    parser.add_argument(
+        "--txt-out",
+        default=None,
+        help="Optional output path for extracted text. Defaults to '<file>.txt'.",
+    )
+    args = parser.parse_args()
+
+    jd_data = parse_job_description(args.file)
+    output_file = write_text_output(args.file, jd_data["resulting_text"], args.txt_out)
+
+    if args.json:
+        print(json.dumps(jd_data, indent=2, ensure_ascii=False))
+    else:
+        print(f"Text extracted to: {output_file}")
+
+
+if __name__ == "__main__":
+    main()
+
+
+

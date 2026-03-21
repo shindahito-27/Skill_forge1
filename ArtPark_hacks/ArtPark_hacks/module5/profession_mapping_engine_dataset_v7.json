@@ -1,0 +1,4272 @@
+{
+  "dataset_name": "profession_mapping_engine_dataset",
+  "description": "O*NET-inspired profession mapping dataset for resume-to-role prediction. Roles are grouped across engineering, AI/ML, data, cloud/devops, security, quality, architecture, and management pathways. Weights are normalized on a 0-1 scale and can be used directly for cosine similarity.",
+  "matching_output_example": {
+    "Backend Engineer": 0.63,
+    "Data Analyst": 0.74,
+    "ML Engineer": 0.82
+  },
+  "roles": {
+    "AI Engineer": {
+      "aliases": [
+        "Artificial Intelligence Engineer"
+      ],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "aws": 0.2004750600517053,
+        "computer vision": 0.2621596939137684,
+        "deep learning": 0.3084231693103158,
+        "evaluation": 0.24673853544825267,
+        "llms": 0.27758085237928426,
+        "machine learning": 0.3084231693103158,
+        "mlops": 0.2621596939137684,
+        "model deployment": 0.24673853544825267,
+        "nlp": 0.2621596939137684,
+        "prompt engineering": 0.21589621851722104,
+        "python": 0.3084231693103158,
+        "pytorch": 0.27758085237928426,
+        "tensorflow": 0.2621596939137684,
+        "transformers": 0.27758085237928426,
+        "rag": 0.268,
+        "embeddings": 0.244
+      },
+      "level": "mid",
+      "prior": 0.72,
+      "description": "Builds AI-powered applications using machine learning and LLM-based systems.",
+      "core_skills": [
+        "deep learning",
+        "machine learning",
+        "python",
+        "llms",
+        "pytorch"
+      ],
+      "optional_skills": [
+        "transformers",
+        "computer vision",
+        "mlops",
+        "nlp",
+        "tensorflow",
+        "rag",
+        "embeddings"
+      ],
+      "why_this_role": [
+        "strong Python and model-building alignment",
+        "good fit for applied AI and deployment"
+      ]
+    },
+    "BI Developer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Data",
+      "weights": {
+        "analytics": 0.29359643953044645,
+        "business intelligence": 0.32621826614494054,
+        "communication": 0.15376875083369976,
+        "dashboarding": 0.3099073528376935,
+        "data modeling": 0.27728552622319946,
+        "data visualization": 0.3099073528376935,
+        "excel": 0.3099073528376935,
+        "power bi": 0.32621826614494054,
+        "reporting": 0.29359643953044645,
+        "sql": 0.32621826614494054,
+        "stakeholder management": 0.15376875083369976,
+        "tableau": 0.3099073528376935
+      },
+      "level": "mid",
+      "prior": 0.86,
+      "description": "Builds business intelligence dashboards, reports, and analytics pipelines.",
+      "core_skills": [
+        "business intelligence",
+        "power bi",
+        "sql",
+        "dashboarding",
+        "data visualization"
+      ],
+      "optional_skills": [
+        "excel",
+        "tableau",
+        "analytics",
+        "reporting",
+        "data modeling"
+      ],
+      "why_this_role": [
+        "strong reporting and dashboard alignment",
+        "good fit for SQL and visualization-heavy work"
+      ]
+    },
+    "Backend Engineer": {
+      "aliases": [
+        "Server-side Engineer"
+      ],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "apis": 0.2813276230657099,
+        "authentication": 0.22506209845256792,
+        "django": 0.22506209845256792,
+        "express.js": 0.2391284796058534,
+        "fastapi": 0.2391284796058534,
+        "flask": 0.22506209845256792,
+        "graphql": 0.22506209845256792,
+        "java": 0.2531948607591389,
+        "microservices": 0.2531948607591389,
+        "mongodb": 0.21099571729928243,
+        "node.js": 0.2531948607591389,
+        "postgresql": 0.22506209845256792,
+        "python": 0.2391284796058534,
+        "redis": 0.21099571729928243,
+        "rest api": 0.2813276230657099,
+        "sql": 0.2531948607591389,
+        "system design": 0.2672612419124244,
+        "git": 0.148
+      },
+      "level": "mid",
+      "prior": 0.85,
+      "description": "Builds server-side services, APIs, and database-backed applications.",
+      "core_skills": [
+        "apis",
+        "rest api",
+        "system design",
+        "java",
+        "microservices"
+      ],
+      "optional_skills": [
+        "node.js",
+        "sql",
+        "express.js",
+        "fastapi",
+        "python",
+        "git"
+      ],
+      "why_this_role": [
+        "strong APIs and database alignment",
+        "good fit for system design and service development"
+      ]
+    },
+    "Software Engineer": {
+      "aliases": [
+        "SWE",
+        "Software Developer"
+      ],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "apis": 0.214,
+        "automation": 0.241,
+        "c": 0.182,
+        "c++": 0.182,
+        "debugging": 0.289,
+        "git": 0.214,
+        "java": 0.321,
+        "linux": 0.214,
+        "python": 0.241,
+        "software architecture": 0.228,
+        "system design": 0.257
+      },
+      "level": "entry",
+      "prior": 0.84,
+      "description": "Builds production software with strong coding, debugging, and engineering fundamentals.",
+      "core_skills": [
+        "java",
+        "debugging",
+        "git",
+        "automation",
+        "system design"
+      ],
+      "optional_skills": [
+        "python",
+        "linux",
+        "software architecture",
+        "apis",
+        "c",
+        "c++"
+      ],
+      "why_this_role": [
+        "strong coding and debugging alignment",
+        "good fit for general software engineering pathways"
+      ]
+    },
+    "Systems Engineer": {
+      "aliases": [
+        "Systems Software Engineer"
+      ],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "automation": 0.286,
+        "c": 0.194,
+        "c++": 0.179,
+        "communication protocols": 0.149,
+        "debugging": 0.286,
+        "file systems": 0.319,
+        "git": 0.197,
+        "java": 0.211,
+        "linux": 0.302,
+        "python": 0.194,
+        "system design": 0.257
+      },
+      "level": "entry",
+      "prior": 0.74,
+      "description": "Builds and debugs low-level, platform, and system-oriented software.",
+      "core_skills": [
+        "linux",
+        "automation",
+        "debugging",
+        "file systems",
+        "system design"
+      ],
+      "optional_skills": [
+        "git",
+        "java",
+        "python",
+        "c",
+        "c++"
+      ],
+      "why_this_role": [
+        "strong systems and automation alignment",
+        "good fit for platform or low-level software work"
+      ]
+    },
+    "Cloud Engineer": {
+      "aliases": [
+        "Cloud Platform Engineer"
+      ],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "aws": 0.3185052586647649,
+        "azure": 0.3185052586647649,
+        "cloud architecture": 0.3185052586647649,
+        "cost optimization": 0.23887894399857368,
+        "docker": 0.27072946986505014,
+        "gcp": 0.3185052586647649,
+        "iam": 0.27072946986505014,
+        "kubernetes": 0.27072946986505014,
+        "load balancing": 0.25480420693181194,
+        "networking": 0.25480420693181194,
+        "reliability": 0.23887894399857368,
+        "security best practices": 0.23887894399857368,
+        "serverless": 0.27072946986505014
+      },
+      "level": "mid",
+      "prior": 0.64,
+      "description": "Designs and operates cloud infrastructure, networking, and deployment workflows.",
+      "core_skills": [
+        "aws",
+        "azure",
+        "cloud architecture",
+        "gcp",
+        "docker"
+      ],
+      "optional_skills": [
+        "iam",
+        "kubernetes",
+        "serverless",
+        "load balancing",
+        "networking"
+      ],
+      "why_this_role": [
+        "strong cloud and infrastructure alignment",
+        "good fit for deployment and scaling work"
+      ]
+    },
+    "Computer Vision Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "computer vision": 0.3203795542214752,
+        "deep learning": 0.3043605765104014,
+        "feature engineering": 0.2242656879550326,
+        "image processing": 0.3043605765104014,
+        "model deployment": 0.24028466566610637,
+        "model training": 0.25630364337718015,
+        "object detection": 0.28834159879932764,
+        "opencv": 0.3203795542214752,
+        "python": 0.3203795542214752,
+        "pytorch": 0.3043605765104014,
+        "segmentation": 0.28834159879932764,
+        "tensorflow": 0.2723226210882539
+      },
+      "level": "mid",
+      "prior": 0.58,
+      "description": "Develops vision systems for image, video, and perception tasks.",
+      "core_skills": [
+        "computer vision",
+        "opencv",
+        "python",
+        "deep learning",
+        "image processing"
+      ],
+      "optional_skills": [
+        "pytorch",
+        "object detection",
+        "segmentation",
+        "tensorflow",
+        "model training"
+      ],
+      "why_this_role": [
+        "strong computer vision and Python alignment",
+        "good fit for model training and inference"
+      ]
+    },
+    "Data Analyst": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Data",
+      "weights": {
+        "attention to detail": 0.26714498758151617,
+        "communication": 0.15308115846128534,
+        "data analysis": 0.31723467275305045,
+        "data cleaning": 0.3005381110292057,
+        "data visualization": 0.3005381110292057,
+        "excel": 0.33393123447689516,
+        "pandas": 0.2504484258576714,
+        "power bi": 0.3005381110292057,
+        "python": 0.2504484258576714,
+        "sql": 0.33393123447689516,
+        "stakeholder management": 0.15308115846128534,
+        "statistics": 0.26714498758151617,
+        "tableau": 0.3005381110292057
+      },
+      "level": "entry",
+      "prior": 0.93,
+      "description": "Analyzes data to produce reports, dashboards, and business insights.",
+      "core_skills": [
+        "excel",
+        "sql",
+        "data analysis",
+        "data cleaning",
+        "data visualization"
+      ],
+      "optional_skills": [
+        "power bi",
+        "tableau",
+        "attention to detail",
+        "statistics",
+        "pandas"
+      ],
+      "why_this_role": [
+        "strong SQL and analytics alignment",
+        "high fit for student resumes with reporting skills"
+      ]
+    },
+    "Data Architect": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Data",
+      "weights": {
+        "bigquery": 0.26986189477395456,
+        "cloud architecture": 0.26986189477395456,
+        "communication": 0.15470009283300168,
+        "data governance": 0.30359463162069883,
+        "data modeling": 0.33732736846744316,
+        "data warehousing": 0.32046100004407096,
+        "database design": 0.33732736846744316,
+        "integration": 0.25299552635058237,
+        "postgresql": 0.26986189477395456,
+        "redshift": 0.26986189477395456,
+        "snowflake": 0.28672826319732664,
+        "sql": 0.30359463162069883,
+        "stakeholder management": 0.15470009283300168
+      },
+      "level": "senior",
+      "prior": 0.44,
+      "description": "Designs enterprise data models, governance, and warehouse architecture.",
+      "core_skills": [
+        "data modeling",
+        "database design",
+        "data warehousing",
+        "data governance",
+        "sql"
+      ],
+      "optional_skills": [
+        "snowflake",
+        "bigquery",
+        "cloud architecture",
+        "postgresql",
+        "redshift"
+      ],
+      "why_this_role": [
+        "requires advanced data architecture knowledge",
+        "less common for entry-level resumes"
+      ]
+    },
+    "Data Engineer": {
+      "aliases": [
+        "DE"
+      ],
+      "category": "technical",
+      "family": "Data",
+      "weights": {
+        "airflow": 0.285271136430647,
+        "bigquery": 0.2252140550768266,
+        "data modeling": 0.285271136430647,
+        "data quality": 0.2552425957537368,
+        "data warehouse": 0.2702568660921919,
+        "database design": 0.2552425957537368,
+        "etl": 0.30028540676910215,
+        "hadoop": 0.24022832541528172,
+        "linux": 0.19518551439991638,
+        "mongodb": 0.21019978473837148,
+        "postgresql": 0.24022832541528172,
+        "python": 0.2702568660921919,
+        "snowflake": 0.2252140550768266,
+        "spark": 0.285271136430647,
+        "sql": 0.30028540676910215
+      },
+      "level": "mid",
+      "prior": 0.8,
+      "description": "Builds data pipelines, transformations, and warehouse workflows.",
+      "core_skills": [
+        "etl",
+        "sql",
+        "airflow",
+        "data modeling",
+        "spark"
+      ],
+      "optional_skills": [
+        "data warehouse",
+        "python",
+        "data quality",
+        "database design",
+        "hadoop"
+      ],
+      "why_this_role": [
+        "strong pipeline and SQL alignment",
+        "good fit for backend-style data work"
+      ]
+    },
+    "Data Scientist": {
+      "aliases": [
+        "DS"
+      ],
+      "category": "technical",
+      "family": "Data",
+      "weights": {
+        "communication": 0.15084471670039518,
+        "data analysis": 0.29216138892998517,
+        "data storytelling": 0.2306537281026199,
+        "experiment design": 0.26140755851630254,
+        "hypothesis testing": 0.2767844737231439,
+        "machine learning": 0.2767844737231439,
+        "matplotlib": 0.24603064330946123,
+        "numpy": 0.2767844737231439,
+        "pandas": 0.2767844737231439,
+        "probability": 0.29216138892998517,
+        "python": 0.30753830413682653,
+        "seaborn": 0.24603064330946123,
+        "sql": 0.26140755851630254,
+        "statistics": 0.30753830413682653,
+        "boosting": 0.226,
+        "hyperparameter tuning": 0.241,
+        "random forest": 0.219,
+        "sampling": 0.184
+      },
+      "level": "mid",
+      "prior": 0.74,
+      "description": "Applies statistics and machine learning to solve analytical problems.",
+      "core_skills": [
+        "python",
+        "statistics",
+        "data analysis",
+        "probability",
+        "hypothesis testing"
+      ],
+      "optional_skills": [
+        "machine learning",
+        "numpy",
+        "pandas",
+        "experiment design",
+        "sql",
+        "boosting",
+        "hyperparameter tuning",
+        "random forest",
+        "sampling"
+      ],
+      "why_this_role": [
+        "strong statistics and ML alignment",
+        "good fit for experimental modeling work"
+      ]
+    },
+    "DevOps Engineer": {
+      "aliases": [
+        "DevOps"
+      ],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "ansible": 0.24089858553768267,
+        "aws": 0.2834101006325679,
+        "azure": 0.26923959560093946,
+        "bash": 0.2550690905693111,
+        "ci/cd": 0.2834101006325679,
+        "docker": 0.2834101006325679,
+        "gcp": 0.26923959560093946,
+        "grafana": 0.2267280805060543,
+        "incident response": 0.1983870704427975,
+        "jenkins": 0.2550690905693111,
+        "kubernetes": 0.2834101006325679,
+        "linux": 0.2834101006325679,
+        "monitoring": 0.24089858553768267,
+        "prometheus": 0.2267280805060543,
+        "terraform": 0.2550690905693111
+      },
+      "level": "mid",
+      "prior": 0.66,
+      "description": "Automates builds, deployments, infrastructure, and operational reliability.",
+      "core_skills": [
+        "aws",
+        "ci/cd",
+        "docker",
+        "kubernetes",
+        "linux"
+      ],
+      "optional_skills": [
+        "azure",
+        "gcp",
+        "bash",
+        "jenkins",
+        "terraform"
+      ],
+      "why_this_role": [
+        "strong CI/CD and Linux alignment",
+        "good fit for deployment-focused profiles"
+      ]
+    },
+    "Embedded Systems Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Hardware",
+      "weights": {
+        "arduino": 0.2936648097662978,
+        "c": 0.32629423307366423,
+        "c++": 0.309979521419981,
+        "communication protocols": 0.2610353864589314,
+        "debugging": 0.22840596315156494,
+        "electronics": 0.2773500981126146,
+        "embedded systems": 0.32629423307366423,
+        "firmware": 0.309979521419981,
+        "linux": 0.22840596315156494,
+        "microcontrollers": 0.309979521419981,
+        "raspberry pi": 0.2773500981126146,
+        "rtos": 0.2936648097662978
+      },
+      "level": "mid",
+      "prior": 0.58,
+      "description": "Develops software close to hardware and constrained devices.",
+      "core_skills": [
+        "c",
+        "embedded systems",
+        "c++",
+        "firmware",
+        "microcontrollers"
+      ],
+      "optional_skills": [
+        "arduino",
+        "rtos",
+        "electronics",
+        "raspberry pi",
+        "communication protocols"
+      ],
+      "why_this_role": [
+        "strong C/C++ and hardware alignment",
+        "good fit for systems-oriented profiles"
+      ]
+    },
+    "Frontend Engineer": {
+      "aliases": [
+        "UI Engineer"
+      ],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "accessibility": 0.25940262070027015,
+        "angular": 0.23058010728912903,
+        "css": 0.28822513411141126,
+        "debugging": 0.2017575938779879,
+        "html": 0.28822513411141126,
+        "javascript": 0.28822513411141126,
+        "next.js": 0.25940262070027015,
+        "react": 0.28822513411141126,
+        "responsive design": 0.28822513411141126,
+        "state management": 0.2449913639946996,
+        "tailwind css": 0.25940262070027015,
+        "typescript": 0.2738138774058407,
+        "ux thinking": 0.2017575938779879,
+        "vue.js": 0.23058010728912903,
+        "web performance": 0.2449913639946996
+      },
+      "level": "entry",
+      "prior": 0.84,
+      "description": "Builds user interfaces and interactive web experiences.",
+      "core_skills": [
+        "css",
+        "html",
+        "javascript",
+        "react",
+        "responsive design"
+      ],
+      "optional_skills": [
+        "typescript",
+        "accessibility",
+        "next.js",
+        "tailwind css",
+        "state management"
+      ],
+      "why_this_role": [
+        "strong JavaScript and UI alignment",
+        "good fit for web-focused resumes"
+      ]
+    },
+    "Full Stack Developer": {
+      "aliases": [
+        "Full-stack Engineer"
+      ],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "apis": 0.27216552697590873,
+        "authentication": 0.24192491286747442,
+        "css": 0.302406141084343,
+        "debugging": 0.24192491286747442,
+        "deployment": 0.2116842987590401,
+        "express.js": 0.25704521992169155,
+        "html": 0.302406141084343,
+        "javascript": 0.302406141084343,
+        "mongodb": 0.22680460581325726,
+        "node.js": 0.27216552697590873,
+        "react": 0.27216552697590873,
+        "sql": 0.24192491286747442,
+        "typescript": 0.27216552697590873,
+        "web development": 0.302406141084343
+      },
+      "level": "mid",
+      "prior": 0.82,
+      "description": "Builds both client and server parts of web applications.",
+      "core_skills": [
+        "css",
+        "html",
+        "javascript",
+        "web development",
+        "apis"
+      ],
+      "optional_skills": [
+        "node.js",
+        "react",
+        "typescript",
+        "express.js",
+        "authentication"
+      ],
+      "why_this_role": [
+        "balanced frontend and backend alignment",
+        "good fit for broad web development resumes"
+      ]
+    },
+    "Infrastructure Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "ansible": 0.29062515767428204,
+        "automation": 0.2744793155812663,
+        "cloud architecture": 0.29062515767428204,
+        "docker": 0.30677099976729766,
+        "incident response": 0.242187631395235,
+        "kubernetes": 0.30677099976729766,
+        "linux": 0.32291684186031333,
+        "load balancing": 0.2744793155812663,
+        "monitoring": 0.2744793155812663,
+        "networking": 0.29062515767428204,
+        "reliability": 0.2744793155812663,
+        "terraform": 0.30677099976729766
+      },
+      "level": "mid",
+      "prior": 0.55,
+      "description": "Builds and maintains internal systems, networks, and operational platforms.",
+      "core_skills": [
+        "linux",
+        "docker",
+        "kubernetes",
+        "terraform",
+        "ansible"
+      ],
+      "optional_skills": [
+        "cloud architecture",
+        "networking",
+        "automation",
+        "load balancing",
+        "monitoring"
+      ],
+      "why_this_role": [
+        "strong infra and reliability alignment",
+        "good fit for systems-heavy profiles"
+      ]
+    },
+    "IoT Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Hardware",
+      "weights": {
+        "arduino": 0.3008967382970352,
+        "c": 0.28319693016191555,
+        "cloud architecture": 0.23009750575655635,
+        "data collection": 0.24779731389167603,
+        "embedded software": 0.28319693016191555,
+        "embedded systems": 0.31859654643215496,
+        "iot": 0.35399616270239437,
+        "linux": 0.23009750575655635,
+        "mqtt": 0.31859654643215496,
+        "python": 0.24779731389167603,
+        "raspberry pi": 0.3008967382970352,
+        "sensors": 0.31859654643215496
+      },
+      "level": "mid",
+      "prior": 0.62,
+      "description": "Builds connected device systems, sensors, and edge integrations.",
+      "core_skills": [
+        "iot",
+        "embedded systems",
+        "mqtt",
+        "sensors",
+        "arduino"
+      ],
+      "optional_skills": [
+        "raspberry pi",
+        "c",
+        "embedded software",
+        "data collection",
+        "python"
+      ],
+      "why_this_role": [
+        "strong hardware and connectivity alignment",
+        "good fit for device + software profiles"
+      ]
+    },
+    "ML Engineer": {
+      "aliases": [
+        "Machine Learning Engineer",
+        "MLE"
+      ],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "aws": 0.2110339614348628,
+        "communication": 0.1356646894938404,
+        "deep learning": 0.28640323337588525,
+        "docker": 0.2110339614348628,
+        "feature engineering": 0.25625552459947626,
+        "gcp": 0.19596010704665834,
+        "kubernetes": 0.18088625265845382,
+        "machine learning": 0.3014770877640897,
+        "mlops": 0.2713293789876808,
+        "model deployment": 0.2411816702112718,
+        "model evaluation": 0.25625552459947626,
+        "model training": 0.2713293789876808,
+        "python": 0.3014770877640897,
+        "pytorch": 0.2713293789876808,
+        "scikit-learn": 0.2713293789876808,
+        "tensorflow": 0.2713293789876808,
+        "boosting": 0.238,
+        "hyperparameter tuning": 0.252,
+        "random forest": 0.214
+      },
+      "level": "mid",
+      "prior": 0.76,
+      "description": "Builds machine learning pipelines and deploys models into production.",
+      "core_skills": [
+        "machine learning",
+        "python",
+        "deep learning",
+        "mlops",
+        "model training"
+      ],
+      "optional_skills": [
+        "pytorch",
+        "scikit-learn",
+        "tensorflow",
+        "feature engineering",
+        "model evaluation",
+        "boosting",
+        "hyperparameter tuning",
+        "random forest"
+      ],
+      "why_this_role": [
+        "strong applied ML alignment",
+        "good fit for Python + ML stacks"
+      ]
+    },
+    "MLOps Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "automation": 0.20666598715376705,
+        "aws": 0.2657134120548434,
+        "azure": 0.22142784337903615,
+        "ci/cd": 0.28047526828011243,
+        "docker": 0.29523712450538153,
+        "gcp": 0.23618969960430522,
+        "grafana": 0.23618969960430522,
+        "kubernetes": 0.28047526828011243,
+        "linux": 0.23618969960430522,
+        "mlops": 0.29523712450538153,
+        "model deployment": 0.28047526828011243,
+        "monitoring": 0.2657134120548434,
+        "prometheus": 0.23618969960430522,
+        "python": 0.2657134120548434,
+        "terraform": 0.2509515558295743,
+        "git": 0.184
+      },
+      "level": "mid",
+      "prior": 0.68,
+      "description": "Operationalizes ML models with deployment, monitoring, and lifecycle tooling.",
+      "core_skills": [
+        "docker",
+        "mlops",
+        "ci/cd",
+        "kubernetes",
+        "model deployment"
+      ],
+      "optional_skills": [
+        "aws",
+        "monitoring",
+        "python",
+        "terraform",
+        "gcp",
+        "git"
+      ],
+      "why_this_role": [
+        "strong deployment and ML lifecycle alignment",
+        "good fit for production ML systems"
+      ]
+    },
+    "Mobile Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Software",
+      "weights": {
+        "android": 0.33058980245364317,
+        "android studio": 0.26447184196291457,
+        "api integration": 0.26447184196291457,
+        "flutter": 0.2810013320855967,
+        "ios": 0.33058980245364317,
+        "kotlin": 0.314060312330961,
+        "mobile app development": 0.33058980245364317,
+        "objective-c": 0.2314128617175502,
+        "react native": 0.2810013320855967,
+        "swift": 0.314060312330961,
+        "testing": 0.2314128617175502,
+        "xcode": 0.26447184196291457
+      },
+      "level": "entry",
+      "prior": 0.78,
+      "description": "Builds mobile applications for Android or cross-platform environments.",
+      "core_skills": [
+        "android",
+        "ios",
+        "mobile app development",
+        "kotlin",
+        "swift"
+      ],
+      "optional_skills": [
+        "flutter",
+        "react native",
+        "android studio",
+        "api integration",
+        "xcode"
+      ],
+      "why_this_role": [
+        "good fit for app development skills",
+        "strong UI + platform alignment"
+      ]
+    },
+    "NLP Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "embedding models": 0.27628583314269173,
+        "evaluation": 0.2600337253107687,
+        "information retrieval": 0.2600337253107687,
+        "llms": 0.2925379409746148,
+        "model deployment": 0.2275295096469226,
+        "natural language processing": 0.32504215663846087,
+        "nlp": 0.32504215663846087,
+        "python": 0.32504215663846087,
+        "pytorch": 0.2925379409746148,
+        "tensorflow": 0.2600337253107687,
+        "tokenization": 0.2925379409746148,
+        "transformers": 0.3087900488065378,
+        "rag": 0.298,
+        "embeddings": 0.286
+      },
+      "level": "mid",
+      "prior": 0.58,
+      "description": "Builds language-based ML systems for text understanding and generation.",
+      "core_skills": [
+        "natural language processing",
+        "nlp",
+        "python",
+        "transformers",
+        "llms"
+      ],
+      "optional_skills": [
+        "pytorch",
+        "tokenization",
+        "embedding models",
+        "evaluation",
+        "information retrieval",
+        "rag",
+        "embeddings"
+      ],
+      "why_this_role": [
+        "strong NLP and Python alignment",
+        "good fit for language model workflows"
+      ]
+    },
+    "Network Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Infrastructure",
+      "weights": {
+        "firewalls": 0.2892336089698208,
+        "http": 0.27316507513816407,
+        "https": 0.27316507513816407,
+        "linux": 0.24102800747485068,
+        "load balancing": 0.27316507513816407,
+        "networking": 0.32137067663313423,
+        "routing": 0.3053021428014775,
+        "switching": 0.3053021428014775,
+        "tcp": 0.3053021428014775,
+        "troubleshooting": 0.2892336089698208,
+        "udp": 0.3053021428014775,
+        "vpn": 0.27316507513816407
+      },
+      "level": "mid",
+      "prior": 0.6,
+      "description": "Designs and maintains network connectivity, routing, and security.",
+      "core_skills": [
+        "networking",
+        "routing",
+        "switching",
+        "tcp",
+        "udp"
+      ],
+      "optional_skills": [
+        "firewalls",
+        "troubleshooting",
+        "http",
+        "https",
+        "load balancing"
+      ],
+      "why_this_role": [
+        "good fit for networking and infrastructure work",
+        "less common for general software resumes"
+      ]
+    },
+    "Platform Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "automation": 0.2877882657259857,
+        "ci/cd": 0.2877882657259857,
+        "cloud architecture": 0.25581179175643176,
+        "docker": 0.3037765027107627,
+        "kubernetes": 0.31976473969553965,
+        "linux": 0.31976473969553965,
+        "monitoring": 0.27180002874120873,
+        "platform engineering": 0.31976473969553965,
+        "reliability": 0.27180002874120873,
+        "sre": 0.25581179175643176,
+        "system design": 0.27180002874120873,
+        "terraform": 0.2877882657259857
+      },
+      "level": "mid",
+      "prior": 0.61,
+      "description": "Builds internal developer platforms and shared engineering tooling.",
+      "core_skills": [
+        "kubernetes",
+        "linux",
+        "platform engineering",
+        "docker",
+        "automation"
+      ],
+      "optional_skills": [
+        "ci/cd",
+        "terraform",
+        "monitoring",
+        "reliability",
+        "system design"
+      ],
+      "why_this_role": [
+        "strong platform and automation alignment",
+        "good fit for infrastructure-heavy systems"
+      ]
+    },
+    "QA Automation Engineer": {
+      "aliases": [
+        "Automation Test Engineer"
+      ],
+      "category": "technical",
+      "family": "Quality",
+      "weights": {
+        "automation testing": 0.3213291960680524,
+        "bug tracking": 0.2570633568544419,
+        "ci/cd": 0.2570633568544419,
+        "cypress": 0.3052627362646497,
+        "javascript": 0.22493043724763664,
+        "junit": 0.2891962764612471,
+        "playwright": 0.3052627362646497,
+        "pytest": 0.2891962764612471,
+        "python": 0.22493043724763664,
+        "selenium": 0.3213291960680524,
+        "test automation": 0.3213291960680524,
+        "testing": 0.3213291960680524
+      },
+      "level": "entry",
+      "prior": 0.83,
+      "description": "Builds automated test suites and quality pipelines for software products.",
+      "core_skills": [
+        "automation testing",
+        "selenium",
+        "test automation",
+        "testing",
+        "cypress"
+      ],
+      "optional_skills": [
+        "playwright",
+        "junit",
+        "pytest",
+        "bug tracking",
+        "ci/cd"
+      ],
+      "why_this_role": [
+        "strong testing and automation alignment",
+        "good fit for execution-focused QA profiles"
+      ]
+    },
+    "QA Engineer": {
+      "aliases": [
+        "Test Engineer"
+      ],
+      "category": "technical",
+      "family": "Quality",
+      "weights": {
+        "automation testing": 0.3053021428014775,
+        "bug tracking": 0.27316507513816407,
+        "cypress": 0.2892336089698208,
+        "documentation": 0.24102800747485068,
+        "junit": 0.27316507513816407,
+        "playwright": 0.2892336089698208,
+        "pytest": 0.27316507513816407,
+        "quality assurance": 0.32137067663313423,
+        "selenium": 0.2892336089698208,
+        "test cases": 0.2892336089698208,
+        "test planning": 0.2892336089698208,
+        "testing": 0.32137067663313423
+      },
+      "level": "entry",
+      "prior": 0.9,
+      "description": "Validates software quality through manual and automated testing.",
+      "core_skills": [
+        "quality assurance",
+        "testing",
+        "automation testing",
+        "cypress",
+        "playwright"
+      ],
+      "optional_skills": [
+        "selenium",
+        "test cases",
+        "test planning",
+        "bug tracking",
+        "junit"
+      ],
+      "why_this_role": [
+        "high match for testing-heavy resumes",
+        "common entry-level pathway"
+      ]
+    },
+    "Release Engineer": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "ansible": 0.2514157444218836,
+        "automation": 0.29855619650098675,
+        "ci/cd": 0.31426968052735443,
+        "deployment": 0.29855619650098675,
+        "docker": 0.29855619650098675,
+        "jenkins": 0.29855619650098675,
+        "kubernetes": 0.282842712474619,
+        "linux": 0.282842712474619,
+        "monitoring": 0.26712922844825127,
+        "release management": 0.31426968052735443,
+        "terraform": 0.26712922844825127,
+        "version control": 0.282842712474619
+      },
+      "level": "mid",
+      "prior": 0.52,
+      "description": "Manages build, release, and deployment workflows across environments.",
+      "core_skills": [
+        "ci/cd",
+        "release management",
+        "automation",
+        "deployment",
+        "docker"
+      ],
+      "optional_skills": [
+        "jenkins",
+        "kubernetes",
+        "linux",
+        "version control",
+        "monitoring"
+      ],
+      "why_this_role": [
+        "strong deployment pipeline alignment",
+        "good fit for CI/CD-oriented profiles"
+      ]
+    },
+    "Research Scientist": {
+      "aliases": [],
+      "category": "technical",
+      "family": "AI/ML",
+      "weights": {
+        "communication": 0.15080745257726594,
+        "data analysis": 0.27470033259596066,
+        "deep learning": 0.27470033259596066,
+        "experiment design": 0.2899614621846251,
+        "hypothesis testing": 0.2899614621846251,
+        "machine learning": 0.2899614621846251,
+        "model evaluation": 0.27470033259596066,
+        "probability": 0.2899614621846251,
+        "problem solving": 0.24417807341863168,
+        "publications": 0.27470033259596066,
+        "python": 0.3052225917732896,
+        "research methods": 0.3052225917732896,
+        "statistics": 0.3052225917732896
+      },
+      "level": "senior",
+      "prior": 0.4,
+      "description": "Conducts advanced research in machine learning, AI, or applied computing.",
+      "core_skills": [
+        "python",
+        "research methods",
+        "statistics",
+        "experiment design",
+        "hypothesis testing"
+      ],
+      "optional_skills": [
+        "machine learning",
+        "probability",
+        "data analysis",
+        "deep learning",
+        "model evaluation"
+      ],
+      "why_this_role": [
+        "requires deep theory and experimentation",
+        "less likely for most student resumes"
+      ]
+    },
+    "Security Analyst": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Security",
+      "weights": {
+        "communication": 0.15188293506292708,
+        "compliance": 0.27057840019817186,
+        "cryptography": 0.25366725018578606,
+        "documentation": 0.2198449501610146,
+        "incident response": 0.32131185023532904,
+        "linux": 0.23675610017340032,
+        "network security": 0.3382230002477148,
+        "risk assessment": 0.3044007002229433,
+        "security auditing": 0.3044007002229433,
+        "siem": 0.3382230002477148,
+        "threat detection": 0.3382230002477148,
+        "vulnerability management": 0.32131185023532904
+      },
+      "level": "entry",
+      "prior": 0.7,
+      "description": "Monitors threats, incidents, and security events across systems.",
+      "core_skills": [
+        "network security",
+        "siem",
+        "threat detection",
+        "incident response",
+        "vulnerability management"
+      ],
+      "optional_skills": [
+        "risk assessment",
+        "security auditing",
+        "compliance",
+        "cryptography",
+        "linux"
+      ],
+      "why_this_role": [
+        "good fit for security operations skills",
+        "common early security role"
+      ]
+    },
+    "Security Engineer": {
+      "aliases": [
+        "AppSec / Security Engineer"
+      ],
+      "category": "technical",
+      "family": "Security",
+      "weights": {
+        "application security": 0.3023500425666594,
+        "cryptography": 0.3023500425666594,
+        "ethical hacking": 0.3023500425666594,
+        "firewalls": 0.2864368824315721,
+        "incident response": 0.27052372229648475,
+        "intrusion detection": 0.2864368824315721,
+        "linux": 0.22278424189122273,
+        "network security": 0.31826320270174674,
+        "penetration testing": 0.3023500425666594,
+        "security auditing": 0.2864368824315721,
+        "siem": 0.2864368824315721,
+        "vulnerability management": 0.2864368824315721
+      },
+      "level": "mid",
+      "prior": 0.65,
+      "description": "Builds defenses, hardening, and security controls for systems.",
+      "core_skills": [
+        "network security",
+        "application security",
+        "cryptography",
+        "ethical hacking",
+        "penetration testing"
+      ],
+      "optional_skills": [
+        "firewalls",
+        "intrusion detection",
+        "security auditing",
+        "siem",
+        "vulnerability management"
+      ],
+      "why_this_role": [
+        "strong security architecture alignment",
+        "good fit for infra + security profiles"
+      ]
+    },
+    "Site Reliability Engineer": {
+      "aliases": [
+        "SRE"
+      ],
+      "category": "technical",
+      "family": "Cloud",
+      "weights": {
+        "automation": 0.27968389413295375,
+        "cloud architecture": 0.23306991177746142,
+        "docker": 0.27968389413295375,
+        "grafana": 0.2952218882514511,
+        "incident response": 0.2952218882514511,
+        "kubernetes": 0.2952218882514511,
+        "linux": 0.3107598823699486,
+        "monitoring": 0.3107598823699486,
+        "networking": 0.23306991177746142,
+        "prometheus": 0.2952218882514511,
+        "site reliability engineering": 0.3107598823699486,
+        "sre": 0.3107598823699486
+      },
+      "level": "mid",
+      "prior": 0.57,
+      "description": "Improves service reliability through automation, monitoring, and operations.",
+      "core_skills": [
+        "linux",
+        "monitoring",
+        "site reliability engineering",
+        "sre",
+        "grafana"
+      ],
+      "optional_skills": [
+        "incident response",
+        "kubernetes",
+        "prometheus",
+        "automation",
+        "docker"
+      ],
+      "why_this_role": [
+        "strong observability and automation alignment",
+        "good fit for production systems"
+      ]
+    },
+    "Solutions Architect": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Architecture",
+      "weights": {
+        "apis": 0.284073480420502,
+        "aws": 0.3007836851511198,
+        "azure": 0.284073480420502,
+        "cloud architecture": 0.3342040946123553,
+        "communication": 0.15687358288787678,
+        "database design": 0.284073480420502,
+        "gcp": 0.284073480420502,
+        "microservices": 0.3007836851511198,
+        "networking": 0.26736327568988427,
+        "security best practices": 0.26736327568988427,
+        "stakeholder management": 0.15687358288787678,
+        "system design": 0.3342040946123553,
+        "technical leadership": 0.284073480420502
+      },
+      "level": "senior",
+      "prior": 0.3,
+      "description": "Designs end-to-end technical solutions across platforms and business needs.",
+      "core_skills": [
+        "cloud architecture",
+        "system design",
+        "aws",
+        "microservices",
+        "apis"
+      ],
+      "optional_skills": [
+        "azure",
+        "database design",
+        "gcp",
+        "technical leadership",
+        "networking"
+      ],
+      "why_this_role": [
+        "senior systems design role",
+        "should not rank high for early-career resumes"
+      ]
+    },
+    "Technical Architect": {
+      "aliases": [],
+      "category": "technical",
+      "family": "Architecture",
+      "weights": {
+        "apis": 0.28926544473669547,
+        "cloud architecture": 0.30628105913297166,
+        "communication": 0.15542066287910636,
+        "database design": 0.28926544473669547,
+        "design patterns": 0.30628105913297166,
+        "mentoring": 0.15542066287910636,
+        "microservices": 0.30628105913297166,
+        "performance optimization": 0.28926544473669547,
+        "scalability": 0.30628105913297166,
+        "software architecture": 0.34031228792552404,
+        "system design": 0.34031228792552404,
+        "technical leadership": 0.30628105913297166
+      },
+      "level": "senior",
+      "prior": 0.25,
+      "description": "Defines system architecture, design standards, and long-term technical direction.",
+      "core_skills": [
+        "software architecture",
+        "system design",
+        "cloud architecture",
+        "design patterns",
+        "microservices"
+      ],
+      "optional_skills": [
+        "scalability",
+        "technical leadership",
+        "apis",
+        "database design",
+        "performance optimization"
+      ],
+      "why_this_role": [
+        "highly senior architecture role",
+        "should rank low for student resumes"
+      ]
+    },
+    "Product Manager": {
+      "aliases": [
+        "product manager"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "mid",
+      "prior": 0.56,
+      "description": "Defines product goals, user value, and delivery priorities.",
+      "why_this_role": [
+        "strong fit for strategy and communication",
+        "good for cross-functional leadership"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    },
+    "Engineering Manager": {
+      "aliases": [
+        "engineering manager"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "senior",
+      "prior": 0.34,
+      "description": "Leads engineering teams, delivery, and people development.",
+      "why_this_role": [
+        "senior leadership role",
+        "should not outrank technical IC roles for most resumes"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    },
+    "Project Manager": {
+      "aliases": [
+        "project manager"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "mid",
+      "prior": 0.6,
+      "description": "Plans delivery, timelines, dependencies, and execution across teams.",
+      "why_this_role": [
+        "strong fit for planning and coordination",
+        "good for operations-heavy profiles"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    },
+    "Technical Program Manager": {
+      "aliases": [
+        "technical program manager"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "mid",
+      "prior": 0.46,
+      "description": "Coordinates technical programs across teams, timelines, and dependencies.",
+      "why_this_role": [
+        "hybrid technical + coordination role",
+        "good for system-level delivery profiles"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    },
+    "Operations Manager": {
+      "aliases": [
+        "operations manager"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "mid",
+      "prior": 0.5,
+      "description": "Runs operational processes, coordination, and execution across functions.",
+      "why_this_role": [
+        "strong fit for coordination and execution",
+        "relevant for management pathways"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    },
+    "Team Lead": {
+      "aliases": [
+        "team lead"
+      ],
+      "category": "management",
+      "family": "Management",
+      "weights": {
+        "leadership": 0.22411506331713155,
+        "communication": 0.22411506331713155,
+        "stakeholder management": 0.22411506331713155,
+        "project management": 0.5891024521478887,
+        "conflict resolution": 0.22411506331713155,
+        "teamwork": 0.22411506331713155,
+        "planning": 0.22411506331713155,
+        "risk management": 0.22411506331713155,
+        "presentation": 0.22411506331713155,
+        "mentoring": 0.22411506331713155,
+        "strategy": 0.22411506331713155,
+        "product thinking": 0.22411506331713155,
+        "execution": 0.22411506331713155,
+        "decision making": 0.22411506331713155
+      },
+      "level": "mid",
+      "prior": 0.48,
+      "description": "Guides a small team with technical direction and delivery ownership.",
+      "why_this_role": [
+        "mix of leadership and technical depth",
+        "good fit for early leadership pathways"
+      ],
+      "core_skills": [
+        "project management",
+        "leadership",
+        "communication",
+        "stakeholder management",
+        "conflict resolution"
+      ],
+      "optional_skills": [
+        "teamwork",
+        "planning",
+        "risk management",
+        "presentation",
+        "mentoring"
+      ]
+    }
+  },
+  "scoring": {
+    "candidate_scoring": {
+      "description": "Bounded confidence score for resume evidence on a 0-1 scale.",
+      "formula": "min(1, weighted_sum)",
+      "weights": {
+        "skills_section": 0.3,
+        "project": 0.6,
+        "internship": 1.0
+      }
+    },
+    "jd_scoring": {
+      "description": "Requirement importance on a 0-1 scale.",
+      "weights": {
+        "mandatory": 1.0,
+        "required": 0.8,
+        "preferred": 0.5
+      }
+    },
+    "gap_calculation": {
+      "description": "Signed gap on a -10 to 10 scale.",
+      "formula": "gap = 10 * (jd_importance - candidate_score)",
+      "meaning": {
+        "gap > 0": "candidate is below the requirement",
+        "gap = 0": "candidate matches the requirement",
+        "gap < 0": "candidate exceeds the requirement / overqualified"
+      },
+      "precondition": "Both jd_importance and candidate_score must be normalized to 0–1 before scaling."
+    },
+    "gap_classification": {
+      "critical_deficit": "gap >= 6",
+      "moderate_deficit": "3 <= gap < 6",
+      "minor_deficit": "0 < gap < 3",
+      "match": "gap = 0",
+      "overqualified": "gap < 0"
+    },
+    "gap_handling": {
+      "raw_gap": "gap = 10 * (jd_importance - candidate_score)",
+      "effective_gap": "max(0, gap)",
+      "note": "negative gaps represent overqualification and are ignored in roadmap generation"
+    },
+    "similarity_policy": {
+      "soft_skill_cap_technical": 0.15,
+      "soft_skill_cap_management": 0.35,
+      "note": "soft skills should not dominate cosine similarity for technical roles"
+    }
+  },
+  "source_files": [
+    "skill_taxonomy_500plus(1).json",
+    "hierarchical_profession_dataset(1).json",
+    "full_skill_ontology(1).json",
+    "gapengine_output.json"
+  ],
+  "version": "1.0",
+  "alias_map": {
+    "tf": "tensorflow",
+    "torch": "pytorch",
+    "js": "javascript",
+    "ts": "typescript",
+    "postgres": "postgresql",
+    "mongo": "mongodb",
+    "aws cloud": "aws",
+    "application programming interface": "apis",
+    "application programming interfaces": "apis",
+    "api": "apis",
+    "apis": "apis",
+    "node": "node.js",
+    "nodejs": "node.js",
+    "node js": "node.js",
+    "node runtime": "node.js",
+    "natural language processing": "nlp",
+    "nlp": "nlp",
+    "representational state transfer": "rest api",
+    "ai": "machine learning",
+    "artificial intelligence": "machine learning",
+    "retrieval augmented generation": "rag",
+    "retrieval-augmented generation": "rag",
+    "rag pipelines": "rag",
+    "vector embeddings": "embeddings",
+    "text embeddings": "embeddings",
+    "embedding model": "embeddings",
+    "embedding models": "embeddings",
+    "hyperparameter optimization": "hyperparameter tuning",
+    "hyperparameter search": "hyperparameter tuning",
+    "hpo": "hyperparameter tuning",
+    "boosted trees": "boosting",
+    "gradient boosting": "boosting",
+    "gradient-boosting": "boosting",
+    "xgboost": "boosting",
+    "xg boost": "boosting",
+    "lightgbm": "boosting",
+    "light gbm": "boosting",
+    "catboost": "boosting",
+    "git version control": "git",
+    "github": "git",
+    "git hub": "git",
+    "file system": "file systems",
+    "file-system": "file systems",
+    "filesystem": "file systems",
+    "random forests": "random forest",
+    "sampling techniques": "sampling"
+  },
+  "skill_graph": {
+    "python": [
+      {
+        "skill": "pandas",
+        "weight": 2
+      },
+      {
+        "skill": "numpy",
+        "weight": 2
+      },
+      {
+        "skill": "apis",
+        "weight": 1
+      },
+      {
+        "skill": "machine learning",
+        "weight": 3
+      }
+    ],
+    "pandas": [
+      {
+        "skill": "data cleaning",
+        "weight": 2
+      },
+      {
+        "skill": "data visualization",
+        "weight": 1
+      }
+    ],
+    "numpy": [
+      {
+        "skill": "statistics",
+        "weight": 2
+      }
+    ],
+    "probability": [
+      {
+        "skill": "statistics",
+        "weight": 2
+      }
+    ],
+    "statistics": [
+      {
+        "skill": "hypothesis testing",
+        "weight": 2
+      },
+      {
+        "skill": "machine learning",
+        "weight": 2
+      }
+    ],
+    "experiment design": [
+      {
+        "skill": "hypothesis testing",
+        "weight": 2
+      }
+    ],
+    "data analysis": [
+      {
+        "skill": "data storytelling",
+        "weight": 1
+      }
+    ],
+    "data visualization": [
+      {
+        "skill": "dashboarding",
+        "weight": 2
+      }
+    ],
+    "sql": [
+      {
+        "skill": "database design",
+        "weight": 2
+      },
+      {
+        "skill": "postgresql",
+        "weight": 1
+      }
+    ],
+    "database design": [
+      {
+        "skill": "data warehousing",
+        "weight": 2
+      },
+      {
+        "skill": "data modeling",
+        "weight": 2
+      }
+    ],
+    "data warehousing": [
+      {
+        "skill": "data engineering",
+        "weight": 2
+      }
+    ],
+    "data engineering": [
+      {
+        "skill": "big data",
+        "weight": 2
+      },
+      {
+        "skill": "etl",
+        "weight": 2
+      }
+    ],
+    "machine learning": [
+      {
+        "skill": "model evaluation",
+        "weight": 2
+      },
+      {
+        "skill": "evaluation",
+        "weight": 1
+      },
+      {
+        "skill": "scikit-learn",
+        "weight": 1
+      },
+      {
+        "skill": "deep learning",
+        "weight": 2
+      },
+      {
+        "skill": "mlops",
+        "weight": 1
+      }
+    ],
+    "feature engineering": [
+      {
+        "skill": "machine learning",
+        "weight": 2
+      },
+      {
+        "skill": "scikit-learn",
+        "weight": 1
+      },
+      {
+        "skill": "xgboost",
+        "weight": 1
+      }
+    ],
+    "deep learning": [
+      {
+        "skill": "tensorflow",
+        "weight": 2
+      },
+      {
+        "skill": "pytorch",
+        "weight": 2
+      },
+      {
+        "skill": "transformers",
+        "weight": 2
+      },
+      {
+        "skill": "computer vision",
+        "weight": 1
+      },
+      {
+        "skill": "natural language processing",
+        "weight": 1
+      }
+    ],
+    "tensorflow": [
+      {
+        "skill": "model deployment",
+        "weight": 1
+      }
+    ],
+    "pytorch": [
+      {
+        "skill": "model deployment",
+        "weight": 1
+      }
+    ],
+    "tokenization": [
+      {
+        "skill": "transformers",
+        "weight": 2
+      }
+    ],
+    "html": [
+      {
+        "skill": "css",
+        "weight": 2
+      }
+    ],
+    "css": [
+      {
+        "skill": "javascript",
+        "weight": 2
+      }
+    ],
+    "javascript": [
+      {
+        "skill": "react",
+        "weight": 2
+      },
+      {
+        "skill": "node.js",
+        "weight": 2
+      }
+    ],
+    "react": [
+      {
+        "skill": "next.js",
+        "weight": 2
+      },
+      {
+        "skill": "state management",
+        "weight": 1
+      }
+    ],
+    "node.js": [
+      {
+        "skill": "rest api",
+        "weight": 2
+      },
+      {
+        "skill": "express.js",
+        "weight": 1
+      }
+    ],
+    "rest api": [
+      {
+        "skill": "microservices",
+        "weight": 1
+      }
+    ],
+    "apis": [
+      {
+        "skill": "rest api",
+        "weight": 2
+      },
+      {
+        "skill": "software architecture",
+        "weight": 2
+      }
+    ],
+    "software architecture": [
+      {
+        "skill": "system design",
+        "weight": 2
+      }
+    ],
+    "java": [
+      {
+        "skill": "apis",
+        "weight": 2
+      },
+      {
+        "skill": "software architecture",
+        "weight": 2
+      }
+    ],
+    "file systems": [
+      {
+        "skill": "system design",
+        "weight": 2
+      }
+    ],
+    "debugging": [
+      {
+        "skill": "system design",
+        "weight": 1
+      }
+    ],
+    "docker": [
+      {
+        "skill": "kubernetes",
+        "weight": 2
+      },
+      {
+        "skill": "containerization",
+        "weight": 2
+      }
+    ],
+    "kubernetes": [
+      {
+        "skill": "cloud deployment",
+        "weight": 2
+      },
+      {
+        "skill": "monitoring",
+        "weight": 1
+      }
+    ],
+    "aws": [
+      {
+        "skill": "cloud deployment",
+        "weight": 2
+      },
+      {
+        "skill": "serverless",
+        "weight": 1
+      }
+    ],
+    "linux": [
+      {
+        "skill": "devops basics",
+        "weight": 2
+      },
+      {
+        "skill": "communication protocols",
+        "weight": 1
+      },
+      {
+        "skill": "shell scripting",
+        "weight": 1
+      }
+    ],
+    "communication protocols": [
+      {
+        "skill": "system design",
+        "weight": 2
+      }
+    ],
+    "devops basics": [
+      {
+        "skill": "ci/cd",
+        "weight": 2
+      },
+      {
+        "skill": "monitoring",
+        "weight": 1
+      }
+    ],
+    "ci/cd": [
+      {
+        "skill": "release engineering",
+        "weight": 2
+      },
+      {
+        "skill": "testing",
+        "weight": 1
+      }
+    ],
+    "git": [
+      {
+        "skill": "ci/cd",
+        "weight": 1
+      }
+    ],
+    "testing": [
+      {
+        "skill": "selenium",
+        "weight": 1
+      },
+      {
+        "skill": "automation testing",
+        "weight": 1
+      }
+    ],
+    "security basics": [
+      {
+        "skill": "network security",
+        "weight": 2
+      }
+    ],
+    "network security": [
+      {
+        "skill": "siem",
+        "weight": 1
+      },
+      {
+        "skill": "intrusion detection",
+        "weight": 1
+      }
+    ],
+    "project management": [
+      {
+        "skill": "stakeholder management",
+        "weight": 2
+      },
+      {
+        "skill": "risk management",
+        "weight": 1
+      }
+    ],
+    "stakeholder management": [
+      {
+        "skill": "communication",
+        "weight": 2
+      },
+      {
+        "skill": "conflict resolution",
+        "weight": 1
+      }
+    ],
+    "leadership": [
+      {
+        "skill": "mentoring",
+        "weight": 2
+      },
+      {
+        "skill": "team development",
+        "weight": 1
+      }
+    ],
+    "product strategy": [
+      {
+        "skill": "roadmap planning",
+        "weight": 2
+      },
+      {
+        "skill": "market research",
+        "weight": 1
+      }
+    ],
+    "roadmap planning": [
+      {
+        "skill": "stakeholder management",
+        "weight": 1
+      }
+    ],
+    "communication": [
+      {
+        "skill": "presentation",
+        "weight": 1
+      }
+    ],
+    "embedded systems": [
+      {
+        "skill": "c++",
+        "weight": 2
+      },
+      {
+        "skill": "arduino",
+        "weight": 1
+      },
+      {
+        "skill": "mqtt",
+        "weight": 1
+      }
+    ],
+    "iot": [
+      {
+        "skill": "mqtt",
+        "weight": 2
+      },
+      {
+        "skill": "embedded systems",
+        "weight": 2
+      }
+    ]
+  },
+  "resources": {
+    "python": [
+      {
+        "title": "Python Official Tutorial",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp Python",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "pandas": [
+      {
+        "title": "Pandas Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Kaggle Pandas Micro-Course",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "numpy": [
+      {
+        "title": "NumPy Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "SciPy Lectures: NumPy",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "statistics": [
+      {
+        "title": "OpenIntro Statistics",
+        "type": "textbook",
+        "level": "beginner"
+      },
+      {
+        "title": "Khan Academy Statistics",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "sql": [
+      {
+        "title": "SQLBolt",
+        "type": "interactive",
+        "level": "beginner"
+      },
+      {
+        "title": "Mode SQL Tutorial",
+        "type": "practical",
+        "level": "beginner"
+      }
+    ],
+    "postgresql": [
+      {
+        "title": "PostgreSQL Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "FreeCodeCamp PostgreSQL Tutorial",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "database design": [
+      {
+        "title": "Vertabelo Academy Database Design",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Database Normalization Tutorial",
+        "type": "practical",
+        "level": "beginner"
+      }
+    ],
+    "data warehousing": [
+      {
+        "title": "Microsoft Learn Data Warehousing",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "AWS Redshift Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "data engineering": [
+      {
+        "title": "Data Engineering Zoomcamp",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Google Cloud Data Engineering Docs",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "big data": [
+      {
+        "title": "Apache Spark Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Databricks Learning",
+        "type": "course",
+        "level": "intermediate"
+      }
+    ],
+    "etl": [
+      {
+        "title": "Talend ETL Concepts",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "AWS ETL Guides",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "machine learning": [
+      {
+        "title": "Andrew Ng Machine Learning Specialization",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Google ML Crash Course",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "feature engineering": [
+      {
+        "title": "Kaggle Feature Engineering Course",
+        "type": "practice",
+        "level": "intermediate"
+      },
+      {
+        "title": "scikit-learn User Guide",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "model evaluation": [
+      {
+        "title": "scikit-learn Model Evaluation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Google ML Rules of Thumb",
+        "type": "article",
+        "level": "intermediate"
+      }
+    ],
+    "deep learning": [
+      {
+        "title": "DeepLearning.AI Deep Learning Specialization",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "PyTorch Tutorials",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "tensorflow": [
+      {
+        "title": "TensorFlow Tutorials",
+        "type": "tutorial",
+        "level": "beginner"
+      },
+      {
+        "title": "TensorFlow Guide",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "pytorch": [
+      {
+        "title": "PyTorch Tutorials",
+        "type": "tutorial",
+        "level": "beginner"
+      },
+      {
+        "title": "PyTorch 60 Minute Blitz",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "computer vision": [
+      {
+        "title": "OpenCV Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "PyImageSearch Tutorials",
+        "type": "tutorial",
+        "level": "intermediate"
+      }
+    ],
+    "natural language processing": [
+      {
+        "title": "Hugging Face Course",
+        "type": "course",
+        "level": "intermediate"
+      },
+      {
+        "title": "spaCy Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "html": [
+      {
+        "title": "MDN HTML Guide",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp Responsive Web Design",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "css": [
+      {
+        "title": "MDN CSS Guide",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp CSS",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "javascript": [
+      {
+        "title": "MDN JavaScript Guide",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp JavaScript",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "react": [
+      {
+        "title": "React Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp React",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "next.js": [
+      {
+        "title": "Next.js Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Vercel Learn Next.js",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "node.js": [
+      {
+        "title": "Node.js Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp Node.js",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "rest api": [
+      {
+        "title": "Postman Learning Center",
+        "type": "tutorial",
+        "level": "beginner"
+      },
+      {
+        "title": "REST API Tutorial",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "microservices": [
+      {
+        "title": "Microsoft Microservices Architecture Guide",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Martin Fowler Microservices",
+        "type": "article",
+        "level": "intermediate"
+      }
+    ],
+    "docker": [
+      {
+        "title": "Docker Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Play with Docker",
+        "type": "interactive",
+        "level": "beginner"
+      }
+    ],
+    "kubernetes": [
+      {
+        "title": "Kubernetes Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Kubernetes Basics",
+        "type": "tutorial",
+        "level": "intermediate"
+      }
+    ],
+    "aws": [
+      {
+        "title": "AWS Skill Builder",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "AWS Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "cloud deployment": [
+      {
+        "title": "AWS Architecture Center",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Google Cloud Architecture Framework",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "linux": [
+      {
+        "title": "Linux Journey",
+        "type": "interactive",
+        "level": "beginner"
+      },
+      {
+        "title": "OverTheWire Bandit",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "ci/cd": [
+      {
+        "title": "GitHub Actions Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "GitLab CI/CD Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "monitoring": [
+      {
+        "title": "Prometheus Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Grafana Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "testing": [
+      {
+        "title": "pytest Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Test Automation University",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "selenium": [
+      {
+        "title": "Selenium Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Selenium HQ Tutorials",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "automation testing": [
+      {
+        "title": "Test Automation University",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Selenium Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "security basics": [
+      {
+        "title": "OWASP Top 10",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Cisco Networking Academy Cybersecurity Essentials",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "network security": [
+      {
+        "title": "NIST Cybersecurity Framework",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "OWASP Cheat Sheet Series",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "siem": [
+      {
+        "title": "Splunk Fundamentals",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Microsoft Sentinel Learning Path",
+        "type": "course",
+        "level": "intermediate"
+      }
+    ],
+    "intrusion detection": [
+      {
+        "title": "Snort Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Suricata Documentation",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "git": [
+      {
+        "title": "Pro Git Book",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Git SCM Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "project management": [
+      {
+        "title": "Google Project Management Certificate",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "PMI Project Management Basics",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "stakeholder management": [
+      {
+        "title": "Atlassian Stakeholder Management Guide",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "PMI Stakeholder Resources",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "leadership": [
+      {
+        "title": "Harvard Business Review Leadership Articles",
+        "type": "article",
+        "level": "intermediate"
+      },
+      {
+        "title": "Google re:Work Team Leadership",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "communication": [
+      {
+        "title": "Toastmasters Communication Resources",
+        "type": "practice",
+        "level": "beginner"
+      },
+      {
+        "title": "Coursera Effective Communication",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "conflict resolution": [
+      {
+        "title": "MindTools Conflict Resolution",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Coursera Conflict Management",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "mentoring": [
+      {
+        "title": "Google re:Work Manager Essentials",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Harvard ManageMentor Coaching",
+        "type": "course",
+        "level": "intermediate"
+      }
+    ],
+    "presentation": [
+      {
+        "title": "Toastmasters Presentation Practice",
+        "type": "practice",
+        "level": "beginner"
+      },
+      {
+        "title": "Coursera Presentation Skills",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "team development": [
+      {
+        "title": "Google re:Work Team Development",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Harvard Business Review on Teams",
+        "type": "article",
+        "level": "intermediate"
+      }
+    ],
+    "product strategy": [
+      {
+        "title": "Product School Resources",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Google Product Management Resources",
+        "type": "course",
+        "level": "intermediate"
+      }
+    ],
+    "roadmap planning": [
+      {
+        "title": "Atlassian Roadmaps Guide",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "ProductPlan Roadmapping Guide",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "risk management": [
+      {
+        "title": "PMI Risk Management Resources",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "Atlassian Risk Management Guide",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "decision making": [
+      {
+        "title": "Google re:Work Decision Making",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "HBR Decision Making Articles",
+        "type": "article",
+        "level": "intermediate"
+      }
+    ],
+    "data visualization": [
+      {
+        "title": "Tableau Learning",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Microsoft Learn Power BI",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "dashboarding": [
+      {
+        "title": "Microsoft Learn Power BI",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Tableau eLearning",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "c++": [
+      {
+        "title": "cppreference",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "learncpp.com",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "arduino": [
+      {
+        "title": "Arduino Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Arduino Project Hub",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "mqtt": [
+      {
+        "title": "MQTT Essentials",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Eclipse Mosquitto Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "system design": [
+      {
+        "title": "System Design Primer",
+        "type": "reference",
+        "level": "intermediate"
+      },
+      {
+        "title": "AWS Architecture Center",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "teamwork": [
+      {
+        "title": "Google re:Work Collaboration",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Coursera Teamwork Skills",
+        "type": "course",
+        "level": "beginner"
+      }
+    ]
+  },
+  "validation_rules": {
+    "min_skills_per_role": 8,
+    "weights_range": [
+      0,
+      1
+    ],
+    "levels": [
+      "entry",
+      "mid",
+      "senior"
+    ],
+    "prior_range": [
+      0,
+      1
+    ],
+    "core_skills_subset_of_weights": true,
+    "soft_skills_capped_for_technical_roles": true
+  },
+  "resource_fallbacks": {
+    "technical": [
+      {
+        "title": "Official Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp / YouTube Beginner Tutorials",
+        "type": "video",
+        "level": "beginner"
+      }
+    ],
+    "data": [
+      {
+        "title": "Kaggle Learn",
+        "type": "course",
+        "level": "beginner"
+      },
+      {
+        "title": "Official Library Documentation",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ],
+    "frontend": [
+      {
+        "title": "MDN Web Docs",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "freeCodeCamp",
+        "type": "practice",
+        "level": "beginner"
+      }
+    ],
+    "backend": [
+      {
+        "title": "Official Framework Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Postman Learning Center",
+        "type": "tutorial",
+        "level": "beginner"
+      }
+    ],
+    "devops": [
+      {
+        "title": "Official Tool Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Hands-on Labs",
+        "type": "practice",
+        "level": "intermediate"
+      }
+    ],
+    "cloud": [
+      {
+        "title": "Cloud Provider Documentation",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "Cloud Skill Builder",
+        "type": "course",
+        "level": "beginner"
+      }
+    ],
+    "security": [
+      {
+        "title": "OWASP Resources",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "NIST Guidance",
+        "type": "reference",
+        "level": "intermediate"
+      }
+    ],
+    "management": [
+      {
+        "title": "Google re:Work",
+        "type": "reference",
+        "level": "beginner"
+      },
+      {
+        "title": "PMI Resources",
+        "type": "reference",
+        "level": "beginner"
+      }
+    ]
+  },
+  "skill_metadata": {
+    "aws": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "computer vision": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "deep learning": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "evaluation": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "llms": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "machine learning": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "mlops": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "model deployment": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "nlp": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "prompt engineering": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "python": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "pytorch": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "tensorflow": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "transformers": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "analytics": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "business intelligence": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "communication": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "dashboarding": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "data modeling": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "data visualization": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "excel": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "power bi": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "reporting": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "sql": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "stakeholder management": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "tableau": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "apis": {
+      "type": "technical",
+      "domain": "backend"
+    },
+    "authentication": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "django": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "express.js": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "fastapi": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "flask": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "graphql": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "java": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "microservices": {
+      "type": "technical",
+      "domain": "backend"
+    },
+    "mongodb": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "node.js": {
+      "type": "technical",
+      "domain": "backend"
+    },
+    "postgresql": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "redis": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "rest api": {
+      "type": "technical",
+      "domain": "backend"
+    },
+    "system design": {
+      "type": "technical",
+      "domain": "architecture"
+    },
+    "azure": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "cloud architecture": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "cost optimization": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "docker": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "gcp": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "iam": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "kubernetes": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "load balancing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "networking": {
+      "type": "technical",
+      "domain": "infrastructure"
+    },
+    "reliability": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "security best practices": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "serverless": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "feature engineering": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "image processing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "model training": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "object detection": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "opencv": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "segmentation": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "attention to detail": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data analysis": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data cleaning": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "pandas": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "statistics": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "bigquery": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data governance": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data warehousing": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "database design": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "integration": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "redshift": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "snowflake": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "airflow": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data quality": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data warehouse": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "etl": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "hadoop": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "linux": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "spark": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data storytelling": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "experiment design": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "hypothesis testing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "matplotlib": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "numpy": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "probability": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "seaborn": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "ansible": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "bash": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "ci/cd": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "grafana": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "incident response": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "jenkins": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "monitoring": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "prometheus": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "terraform": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "arduino": {
+      "type": "technical",
+      "domain": "hardware"
+    },
+    "c": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "c++": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "communication protocols": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "debugging": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "electronics": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "embedded systems": {
+      "type": "technical",
+      "domain": "hardware"
+    },
+    "firmware": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "microcontrollers": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "raspberry pi": {
+      "type": "technical",
+      "domain": "hardware"
+    },
+    "rtos": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "accessibility": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "angular": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "css": {
+      "type": "technical",
+      "domain": "frontend"
+    },
+    "html": {
+      "type": "technical",
+      "domain": "frontend"
+    },
+    "javascript": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "next.js": {
+      "type": "technical",
+      "domain": "frontend"
+    },
+    "react": {
+      "type": "technical",
+      "domain": "frontend"
+    },
+    "responsive design": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "state management": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "tailwind css": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "typescript": {
+      "type": "technical",
+      "domain": "programming"
+    },
+    "ux thinking": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "vue.js": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "web performance": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "deployment": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "web development": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "automation": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "data collection": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "embedded software": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "iot": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "mqtt": {
+      "type": "technical",
+      "domain": "iot"
+    },
+    "sensors": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "model evaluation": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "scikit-learn": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "android": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "android studio": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "api integration": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "flutter": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "ios": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "kotlin": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "mobile app development": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "objective-c": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "react native": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "swift": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "testing": {
+      "type": "technical",
+      "domain": "quality"
+    },
+    "xcode": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "embedding models": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "information retrieval": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "natural language processing": {
+      "type": "technical",
+      "domain": "ml"
+    },
+    "tokenization": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "firewalls": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "http": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "https": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "routing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "switching": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "tcp": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "troubleshooting": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "udp": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "vpn": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "platform engineering": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "sre": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "automation testing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "bug tracking": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "cypress": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "junit": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "playwright": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "pytest": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "selenium": {
+      "type": "technical",
+      "domain": "quality"
+    },
+    "test automation": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "documentation": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "quality assurance": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "test cases": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "test planning": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "release management": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "version control": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "problem solving": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "publications": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "research methods": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "compliance": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "cryptography": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "network security": {
+      "type": "technical",
+      "domain": "security"
+    },
+    "risk assessment": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "security auditing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "siem": {
+      "type": "technical",
+      "domain": "security"
+    },
+    "threat detection": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "vulnerability management": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "application security": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "ethical hacking": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "intrusion detection": {
+      "type": "technical",
+      "domain": "security"
+    },
+    "penetration testing": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "site reliability engineering": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "technical leadership": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "design patterns": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "mentoring": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "performance optimization": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "scalability": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "software architecture": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "leadership": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "project management": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "conflict resolution": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "teamwork": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "planning": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "risk management": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "presentation": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "strategy": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "product thinking": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "execution": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "decision making": {
+      "type": "soft",
+      "domain": "management"
+    },
+    "devops basics": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "team development": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "cloud deployment": {
+      "type": "technical",
+      "domain": "cloud"
+    },
+    "containerization": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "release engineering": {
+      "type": "technical",
+      "domain": "devops"
+    },
+    "security basics": {
+      "type": "technical",
+      "domain": "security"
+    },
+    "data engineering": {
+      "type": "technical",
+      "domain": "data"
+    },
+    "xgboost": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "git": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "shell scripting": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "product strategy": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "market research": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "roadmap planning": {
+      "type": "technical",
+      "domain": "engineering"
+    },
+    "big data": {
+      "type": "technical",
+      "domain": "data"
+    }
+  },
+  "skill_universe": [
+    "accessibility",
+    "airflow",
+    "analytics",
+    "android",
+    "android studio",
+    "angular",
+    "ansible",
+    "api integration",
+    "apis",
+    "application security",
+    "arduino",
+    "attention to detail",
+    "authentication",
+    "automation",
+    "automation testing",
+    "aws",
+    "azure",
+    "bash",
+    "bigquery",
+    "bug tracking",
+    "business intelligence",
+    "c",
+    "c++",
+    "ci/cd",
+    "cloud architecture",
+    "communication",
+    "communication protocols",
+    "compliance",
+    "computer vision",
+    "conflict resolution",
+    "cost optimization",
+    "cryptography",
+    "css",
+    "cypress",
+    "dashboarding",
+    "data analysis",
+    "data cleaning",
+    "data collection",
+    "data governance",
+    "data modeling",
+    "data quality",
+    "data storytelling",
+    "data visualization",
+    "data warehouse",
+    "data warehousing",
+    "database design",
+    "debugging",
+    "decision making",
+    "deep learning",
+    "deployment",
+    "design patterns",
+    "django",
+    "docker",
+    "documentation",
+    "electronics",
+    "embedded software",
+    "embedded systems",
+    "embedding models",
+    "ethical hacking",
+    "etl",
+    "evaluation",
+    "excel",
+    "execution",
+    "experiment design",
+    "express.js",
+    "fastapi",
+    "feature engineering",
+    "file systems",
+    "firewalls",
+    "firmware",
+    "flask",
+    "flutter",
+    "gcp",
+    "grafana",
+    "graphql",
+    "hadoop",
+    "html",
+    "http",
+    "https",
+    "hypothesis testing",
+    "iam",
+    "image processing",
+    "incident response",
+    "information retrieval",
+    "integration",
+    "intrusion detection",
+    "ios",
+    "iot",
+    "java",
+    "javascript",
+    "jenkins",
+    "junit",
+    "kotlin",
+    "kubernetes",
+    "leadership",
+    "linux",
+    "llms",
+    "load balancing",
+    "machine learning",
+    "matplotlib",
+    "mentoring",
+    "microcontrollers",
+    "microservices",
+    "mlops",
+    "mobile app development",
+    "model deployment",
+    "model evaluation",
+    "model training",
+    "mongodb",
+    "monitoring",
+    "mqtt",
+    "natural language processing",
+    "network security",
+    "networking",
+    "next.js",
+    "nlp",
+    "node.js",
+    "numpy",
+    "object detection",
+    "objective-c",
+    "opencv",
+    "pandas",
+    "penetration testing",
+    "performance optimization",
+    "planning",
+    "platform engineering",
+    "playwright",
+    "postgresql",
+    "power bi",
+    "presentation",
+    "probability",
+    "problem solving",
+    "product thinking",
+    "project management",
+    "prometheus",
+    "prompt engineering",
+    "publications",
+    "pytest",
+    "python",
+    "pytorch",
+    "quality assurance",
+    "raspberry pi",
+    "react",
+    "react native",
+    "redis",
+    "redshift",
+    "release management",
+    "reliability",
+    "reporting",
+    "research methods",
+    "responsive design",
+    "rest api",
+    "risk assessment",
+    "risk management",
+    "routing",
+    "rtos",
+    "scalability",
+    "scikit-learn",
+    "seaborn",
+    "security auditing",
+    "security best practices",
+    "segmentation",
+    "selenium",
+    "sensors",
+    "serverless",
+    "siem",
+    "site reliability engineering",
+    "snowflake",
+    "software architecture",
+    "spark",
+    "sql",
+    "sre",
+    "stakeholder management",
+    "state management",
+    "statistics",
+    "strategy",
+    "swift",
+    "switching",
+    "system design",
+    "tableau",
+    "tailwind css",
+    "tcp",
+    "teamwork",
+    "technical leadership",
+    "tensorflow",
+    "terraform",
+    "test automation",
+    "test cases",
+    "test planning",
+    "testing",
+    "threat detection",
+    "tokenization",
+    "transformers",
+    "troubleshooting",
+    "typescript",
+    "udp",
+    "ux thinking",
+    "version control",
+    "vpn",
+    "vue.js",
+    "vulnerability management",
+    "web development",
+    "web performance",
+    "xcode",
+    "rag",
+    "boosting",
+    "embeddings",
+    "hyperparameter tuning",
+    "git",
+    "random forest",
+    "sampling"
+  ],
+  "mapping_policy": {
+    "top_k": 3,
+    "minimum_similarity_threshold": 0.2,
+    "prior_weight": 0.2,
+    "similarity_weight": 0.8,
+    "min_overlap": 2,
+    "use_prior": true,
+    "use_level_bias": true,
+    "use_core_overlap_boost": true,
+    "core_overlap_boost_per_skill": 0.02,
+    "core_overlap_boost_max": 0.06,
+    "candidate_confidence_field": "confidence",
+    "candidate_strength_field": "resulting_score",
+    "candidate_strength_scale": 10.0,
+    "candidate_meta_prefix": "__",
+    "mention_boost_per_extra": 0.04,
+    "max_mention_multiplier": 1.15,
+    "context_multipliers": {
+      "general_only": 0.78,
+      "skills": 1.06,
+      "project": 1.12,
+      "experience": 1.18,
+      "unknown": 0.9
+    },
+    "roadmap_presence_confidence_multiplier": 0.42,
+    "roadmap_presence_general_only_multiplier": 0.85,
+    "roadmap_presence_grounded_multiplier": 1.0,
+    "roadmap_presence_mention_bonus": 0.02,
+    "roadmap_presence_max": 0.45,
+    "grounded_technical_signal_floor": 0.32,
+    "grounded_technical_confidence_threshold": 0.7,
+    "grounded_technical_min_mentions": 2,
+    "roadmap_technical_taxonomies": [
+      "programming",
+      "data",
+      "cloud",
+      "machine learning",
+      "backend",
+      "frontend",
+      "devops",
+      "security"
+    ],
+    "generic_skill_penalties": {
+      "analytical thinking": 0.45,
+      "collaboration": 0.5,
+      "communication": 0.5,
+      "curiosity": 0.35,
+      "documentation": 0.72,
+      "execution": 0.45,
+      "integration": 0.55,
+      "interpersonal skills": 0.45,
+      "planning": 0.5,
+      "problem solving": 0.45,
+      "reliability": 0.45,
+      "teamwork": 0.45
+    },
+    "generic_skill_signal_caps": {
+      "analytical thinking": 0.22,
+      "collaboration": 0.18,
+      "communication": 0.2,
+      "curiosity": 0.18,
+      "documentation": 0.32,
+      "execution": 0.18,
+      "integration": 0.38,
+      "interpersonal skills": 0.2,
+      "planning": 0.16,
+      "presentation": 0.24,
+      "problem solving": 0.22,
+      "reliability": 0.2,
+      "teamwork": 0.18
+    },
+    "generic_skill_drop_threshold": 0.2,
+    "generic_taxonomy_penalties": {
+      "product": 0.82,
+      "soft skills": 0.72
+    },
+    "use_skill_idf": true,
+    "zero_core_overlap_penalty": 0.08,
+    "missing_core_penalty_per_skill": 0.025,
+    "missing_core_penalty_ratio_weight": 0.03,
+    "missing_core_penalty_max": 0.14,
+    "zero_core_overlap_extra_penalty": 0.04,
+    "missing_core_score_scale_per_skill": 0.05,
+    "missing_core_score_scale_ratio_weight": 0.1,
+    "missing_core_score_scale_floor": 0.8,
+    "matched_skills_limit": 8,
+    "missing_skills_limit": 6,
+    "epsilon": 1e-09,
+    "prior_similarity_floor": 0.7,
+    "prior_similarity_gain": 0.3,
+    "adaptive_known_skill_threshold": 0.25,
+    "adaptive_min_target_gap": 0.6,
+    "adaptive_jd_known_skill_gap_discount": 0.35,
+    "adaptive_jd_strong_skill_gap_discount": 0.15,
+    "adaptive_prerequisite_sequence_boost_per_target": 0.08,
+    "adaptive_deferred_target_limit": 5,
+    "adaptive_role_matched_skill_floor_ratio": 1.0,
+    "adaptive_known_skill_priority_discount": 0.72,
+    "minimum_named_resources_per_skill": 2,
+    "maximum_named_resources_per_skill": 3,
+    "suppress_senior_roles_for_students": true,
+    "student_level_bias": {
+      "entry": 1.0,
+      "mid": 0.85,
+      "senior": 0.6
+    }
+  },
+  "role_bias_policy": {
+    "formula": "final_score = ((similarity_weight * similarity * (prior_similarity_floor + prior_similarity_gain * prior * level_bias)) + prior_weight * prior * level_bias + core_overlap_boost - missing_core_penalty) * missing_core_score_scale",
+    "entry_boost": 1.0,
+    "mid_boost": 0.85,
+    "senior_boost": 0.6,
+    "level_bias": {
+      "entry": 1.0,
+      "mid": 0.85,
+      "senior": 0.6
+    },
+    "note": "Helps prioritize realistic roles for student resumes while still allowing strong matches to surface."
+  },
+  "output_schema": {
+    "role": "string",
+    "score": "float (0-1)",
+    "base_similarity": "float (0-1)",
+    "prior": "float (0-1)",
+    "level": "string",
+    "level_bias": "float",
+    "core_skills_found": [
+      "list of overlapping core skills"
+    ],
+    "missing_core_skills": [
+      "list of missing core skills"
+    ],
+    "overlap_count": "integer",
+    "matched_skills": [
+      "list of matched skills"
+    ],
+    "missing_skills": [
+      "list of missing skills"
+    ],
+    "reason": "string explanation of why role matched"
+  },
+  "explanation_templates": {
+    "role_match": "You are a strong fit for {role} due to your skills in {matched_skills}.",
+    "skill_gap": "You may improve your fit by learning {missing_skills}.",
+    "combined": "You match {role} because of {matched_skills}, but lack {missing_skills}.",
+    "technical": "Strong match because the candidate shows core technical alignment in {skills}.",
+    "management": "Strong match because the candidate shows coordination and leadership alignment in {skills}."
+  }
+}
