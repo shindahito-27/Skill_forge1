@@ -13,10 +13,38 @@ REPO_ROOT = PROJECT_ROOT.parents[1]
 
 INPUT_JSON = REPO_ROOT / "output" / "module_6" / "adaptive_path_output.json"
 
+NODE_COLOR_PALETTE = {
+    "missing": "#c2717e",
+    "next_step": "#dfcc7f",
+    "known": "#77ba85",
+    "prerequisite": "#84d9e8",
+    "default": "#94aed4",
+}
+
+RAW_COLOR_ALIASES = {
+    "red": "missing",
+    "yellow": "next_step",
+    "green": "known",
+    "blue": "prerequisite",
+}
+
 
 def _slugify(value: str) -> str:
     cleaned = "".join(ch.lower() if ch.isalnum() else "_" for ch in str(value or ""))
     return "_".join(part for part in cleaned.split("_") if part) or "roadmap"
+
+
+def _node_color(payload: dict) -> str:
+    status = str(payload.get("status") or "").strip().lower()
+    raw_color = str(payload.get("color") or "").strip().lower()
+
+    if raw_color.startswith("#"):
+        return raw_color
+    if status in NODE_COLOR_PALETTE:
+        return NODE_COLOR_PALETTE[status]
+    if raw_color in RAW_COLOR_ALIASES:
+        return NODE_COLOR_PALETTE[RAW_COLOR_ALIASES[raw_color]]
+    return NODE_COLOR_PALETTE["default"]
 
 
 def _write_graph(track_payload: dict, output_html: Path) -> None:
@@ -38,7 +66,7 @@ def _write_graph(track_payload: dict, output_html: Path) -> None:
         net.add_node(
             node_id,
             label=str(payload.get("label") or node_id),
-            color=str(payload.get("color") or "#97C2FC"),
+            color=_node_color(payload),
             size=int(payload.get("size") or 20),
             title=str(payload.get("title") or "No details"),
         )
@@ -227,10 +255,10 @@ def _overlay_html(track_payload: dict) -> str:
     <div class="role-line"><strong>Target JD Role:</strong> {html.escape(jd_role)}</div>
   </div>
   <div class="legend-grid">
-    <div class="legend-item"><span class="legend-dot" style="background:#e11d48"></span>Missing skill</div>
-    <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span>Next step</div>
-    <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Known skill</div>
-    <div class="legend-item"><span class="legend-dot" style="background:#f97316"></span>Prerequisite</div>
+    <div class="legend-item"><span class="legend-dot" style="background:{NODE_COLOR_PALETTE["missing"]}"></span>Missing skill</div>
+    <div class="legend-item"><span class="legend-dot" style="background:{NODE_COLOR_PALETTE["next_step"]}"></span>Next step</div>
+    <div class="legend-item"><span class="legend-dot" style="background:{NODE_COLOR_PALETTE["known"]}"></span>Known skill</div>
+    <div class="legend-item"><span class="legend-dot" style="background:{NODE_COLOR_PALETTE["prerequisite"]}"></span>Prerequisite</div>
   </div>
   <div class="roadmap-meta">
     <span class="roadmap-chip">Nodes: {len(nodes)}</span>
