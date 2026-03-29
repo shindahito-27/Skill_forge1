@@ -17,6 +17,16 @@ app.add_middleware(
 app.include_router(analyze_router)
 
 
+@app.get("/")
+def root() -> dict:
+    return {
+        "status": "ok",
+        "message": "Skillforge Resume Analyzer API is running.",
+        "health_url": "/health",
+        "analyze_url": "/analyze"
+    }
+
+
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
