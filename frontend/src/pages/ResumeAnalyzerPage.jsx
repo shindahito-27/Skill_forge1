@@ -4,6 +4,8 @@ import LoadingState from '../components/LoadingState'
 import ResultsDashboard from '../components/ResultsDashboard'
 import UploadCard from '../components/UploadCard'
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
 async function analyzeResume({ resumeFile, jdFile }) {
   const formData = new FormData()
   formData.append('file', resumeFile)
@@ -11,7 +13,7 @@ async function analyzeResume({ resumeFile, jdFile }) {
     formData.append('job_description', jdFile)
   }
 
-  const response = await fetch('/api/analyze', {
+  const response = await fetch(`${API_BASE_URL}/analyze`, {
     method: 'POST',
     body: formData,
   })
