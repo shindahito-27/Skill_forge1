@@ -13,6 +13,12 @@ PIPELINE_OUTPUT_DIR = ARTPARK_DIR / "output"
 DEFAULT_JD_PATH = ARTPARK_DIR / "Machine-Learning-Engineer.pdf"
 TEMP_UPLOADS_DIR = PROJECT_ROOT / "backend" / "uploads"
 
+DEFAULT_JD_CONTENT = b"%PDF-1.4\n%\xc3\xa2\xc3\xa3\xc3\x8f\xc3\x93\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R >>\nendobj\n4 0 obj\n<< /Length 62 >>\nstream\nBT /F1 24 Tf 100 700 Td (No JD provided) Tj ET\nendstream\nendobj\nxref\n0 5\n0000000000 65535 f \n0000000010 00000 n \n0000000053 00000 n \n0000000102 00000 n \n0000000189 00000 n \ntrailer\n<< /Size 5 /Root 1 0 R >>\nstartxref\n273\n%%EOF\n"
+
+
+def _write_default_jd(path: Path) -> None:
+    path.write_bytes(DEFAULT_JD_CONTENT)
+
 
 def _clear_previous_outputs() -> None:
     if not PIPELINE_OUTPUT_DIR.exists():
@@ -55,9 +61,6 @@ def analyze_resume(
     jd_filename: str | None = None,
     jd_file_bytes: bytes | None = None,
 ) -> dict:
-    if jd_file_bytes is None and not DEFAULT_JD_PATH.exists():
-        raise RuntimeError(f"Default job description not found: {DEFAULT_JD_PATH}")
-
     TEMP_UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
     unique_name = f"{uuid.uuid4().hex}_{filename}"
     upload_path = TEMP_UPLOADS_DIR / unique_name
@@ -67,7 +70,16 @@ def analyze_resume(
         jd_unique_name = f"{uuid.uuid4().hex}_{jd_filename}"
         jd_upload_path = TEMP_UPLOADS_DIR / jd_unique_name
         jd_upload_path.write_bytes(jd_file_bytes)
-    jd_path = jd_upload_path or DEFAULT_JD_PATH
+
+    created_default_jd = False
+    if jd_upload_path is not None:
+        jd_path = jd_upload_path
+    elif DEFAULT_JD_PATH.exists():
+        jd_path = DEFAULT_JD_PATH
+    else:
+        jd_path = TEMP_UPLOADS_DIR / f"default_jd_{uuid.uuid4().hex}.pdf"
+        _write_default_jd(jd_path)
+        created_default_jd = True
 
     old_cwd = Path.cwd()
     try:
@@ -83,6 +95,8 @@ def analyze_resume(
             upload_path.unlink()
         if jd_upload_path and jd_upload_path.exists():
             jd_upload_path.unlink()
+        if created_default_jd and jd_path.exists():
+            jd_path.unlink()
 
     gap_data = _read_json(PIPELINE_OUTPUT_DIR / "module_4" / "gapengine_output.json")
     mapping_data = _read_json(PIPELINE_OUTPUT_DIR / "module_5" / "profession_mapping_output.json")
